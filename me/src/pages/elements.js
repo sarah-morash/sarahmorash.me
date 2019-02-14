@@ -2,16 +2,20 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
-import pic03 from '../assets/images/pic03.jpg'
+import headshot from '../assets/images/headshot.jpg'
 import pic08 from '../assets/images/pic08.jpg'
 import pic09 from '../assets/images/pic09.jpg'
 import pic10 from '../assets/images/pic10.jpg'
 
 const Elements = (props) => (
     <Layout>
-        <Helmet>
-            <title>Elements - Forty by HTML5 UP</title>
-            <meta name="description" content="Elements Page" />
+        <Helmet
+            title="Sarah Morash"
+            meta={[
+                { name: 'description', content: 'Sarah Morash' },
+                { name: 'keywords', content: 'portfolio, blog, personal, coding, technology' },
+            ]}
+        >
         </Helmet>
 
         <div id="main" className="alt">
@@ -378,7 +382,7 @@ const Elements = (props) => (
                                 <h3>Image</h3>
 
                                 <h4>Fit</h4>
-                                <span className="image fit"><img src={pic03} alt="" /></span>
+                                <span className="image fit"><img src={headshot} alt="" /></span>
                                 <div className="box alt">
                                     <div className="grid-wrapper">
                                         <div className="col-4"><span className="image fit"><img src={pic08} alt="" /></span></div>

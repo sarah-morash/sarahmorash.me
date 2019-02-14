@@ -1,21 +1,26 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import ContactForm from '../components/ContactForm'
 
 import pic11 from '../assets/images/pic11.jpg'
 
-const Generic = (props) => (
+const Contact = (props) => (
     <Layout>
-        <Helmet>
-            <title>Generic - Forty by HTML5 UP</title>
-            <meta name="description" content="Generic Page" />
+        <Helmet
+            title="Sarah Morash"
+            meta={[
+                { name: 'description', content: 'Sarah Morash' },
+                { name: 'keywords', content: 'portfolio, blog, personal, coding, technology' },
+            ]}
+        >
         </Helmet>
 
         <div id="main" className="alt">
             <section id="one">
                 <div className="inner">
                     <header className="major">
-                        <h1>Generic</h1>
+                        <h1>Contact</h1>
                     </header>
                     <span className="image main"><img src={pic11} alt="" /></span>
                     <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
@@ -23,9 +28,11 @@ const Generic = (props) => (
                     <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
                 </div>
             </section>
+
+            <ContactForm />
         </div>
 
     </Layout>
 )
 
-export default Generic
+export default Contact
