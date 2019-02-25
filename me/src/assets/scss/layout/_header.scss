@@ -13,7 +13,8 @@
 
 	#header {
 		@include vendor('display', 'flex');
-		background-color: _palette(bg-alt);
+		background: rgb(0,176,200);
+		background: linear-gradient(90deg, rgba(0,176,200,.9) 0%, rgba(36,33,182,.9) 100%);		
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
 		cursor: default;
 		font-weight: _font(weight-bold);
@@ -133,16 +134,16 @@
 			@include vendor('transition', 'opacity #{_duration(banner)} ease');
 			@include vendor('transition-delay', '0.75s');
 			@include vendor('animation', 'none');
-			background-color: transparent;
+			// background-color: transparent;
 			box-shadow: none;
-			position: absolute;
+			position: sticky;
 
 			&.style1 { .logo { strong { color: _palette(accent1); } } }
 			&.style2 { .logo { strong { color: _palette(accent2); } } }
-			&.style3 { .logo { strong { color: _palette(accent3); } } }
-			&.style4 { .logo { strong { color: _palette(accent4); } } }
-			&.style5 { .logo { strong { color: _palette(accent5); } } }
-			&.style6 { .logo { strong { color: _palette(accent6); } } }
+			// &.style3 { .logo { strong { color: _palette(accent3); } } }
+			// &.style4 { .logo { strong { color: _palette(accent4); } } }
+			// &.style5 { .logo { strong { color: _palette(accent5); } } }
+			// &.style6 { .logo { strong { color: _palette(accent6); } } }
 		}
 
 		.body.is-loading & {

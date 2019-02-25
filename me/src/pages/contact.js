@@ -2,8 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import ContactForm from '../components/ContactForm'
-
-import pic11 from '../assets/images/pic11.jpg'
+import BannerLanding from '../components/BannerLanding'
 
 const Contact = (props) => (
     <Layout>
@@ -16,22 +15,11 @@ const Contact = (props) => (
         >
         </Helmet>
 
-        <div id="main" className="alt">
-            <section id="one">
-                <div className="inner">
-                    <header className="major">
-                        <h1>Contact</h1>
-                    </header>
-                    <span className="image main"><img src={pic11} alt="" /></span>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-                </div>
-            </section>
+        <BannerLanding title="Contact" subtitle="Looking for a speaker, influencer, volunteer, freelancer? I'm open to requests, and based on my schedule/fit I will try to make it work! Send me a message, and I'll respond as soon as I can :)" />
 
+        <div id="main" className="alt">
             <ContactForm />
         </div>
-
     </Layout>
 )
 

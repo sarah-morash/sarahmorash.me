@@ -46,6 +46,15 @@
 			}
 		}
 
+		&.icon {
+			width: 36px;
+			height: 36px;
+		}
+
+		&.preview {
+			width: 200px;
+		}
+
 		&.main {
 			display: block;
 			margin: (_size(element-margin) * 1.25) 0;

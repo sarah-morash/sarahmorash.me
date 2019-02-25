@@ -26,6 +26,14 @@
 	body {
 		background: _palette(bg);
 
+		::selection {
+			background: #EED04F; /* WebKit/Blink Browsers */
+		}
+		
+		::-moz-selection {
+			background: #EED04F; /* Gecko Browsers */
+		}
+
 		// Prevents animation/transition "flicker" on page load.
 		// Automatically added/removed by js/main.js.
 			&.is-loading {

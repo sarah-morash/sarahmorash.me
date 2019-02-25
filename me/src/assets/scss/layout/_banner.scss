@@ -8,16 +8,18 @@
 
 	#banner {
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
+		@include vendor('background-image', 'url("../images/toronto.jpg")');
 		@include vendor('display', 'flex');
 		@include padding(4em, 0, (2em, 0, 0, 0));
+	    // background: #00b0c8;
+    	// background: linear-gradient(90deg, #00b0c8 0%, #2421b6 100%);	
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		// height: 60vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;
@@ -91,13 +93,32 @@
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
 				}
+
+				.typedContainer {
+					width: 100%;
+
+					.typedInput {
+						background: none;
+						border: none;
+						font-size: 1em;
+						width: 100%;
+						font-weight: _font(weight-bold);
+						letter-spacing: _font(letter-spacing-alt);
+						text-transform: uppercase;
+						
+						&:focus {
+							border: none;
+							box-shadow: none;
+						}
+					}
+				}
 			}
 		}
 
 		&.major {
 			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
+			// min-height: 30em;
+			// max-height: 50em;
 
 			&.alt {
 				opacity: 0.75;
@@ -105,11 +126,11 @@
 		}
 
 		&.style1 { &:after { background-color: _palette(accent1); } }
-		&.style2 { &:after { background-color: _palette(accent2); } }
-		&.style3 { &:after { background-color: _palette(accent3); } }
-		&.style4 { &:after { background-color: _palette(accent4); } }
-		&.style5 { &:after { background-color: _palette(accent5); } }
-		&.style6 { &:after { background-color: _palette(accent6); } }
+		&.style2 { &:after { background-color: linear-gradient(90deg, rgba(12,151,198,1) 0%, rgba(29,82,194,1) 100%); } }
+		// &.style3 { &:after { background-color: _palette(accent3); } }
+		// &.style4 { &:after { background-color: _palette(accent4); } }
+		// &.style5 { &:after { background-color: _palette(accent5); } }
+		// &.style6 { &:after { background-color: _palette(accent6); } }
 
 		.body.is-loading & {
 			&:after {

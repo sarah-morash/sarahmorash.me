@@ -1,2 +1,0 @@
-# sarahmorash.me
-Personal site

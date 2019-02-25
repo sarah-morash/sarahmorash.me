@@ -13,7 +13,6 @@ import pic06 from '../assets/images/pic06.jpg'
 
 class HomeIndex extends React.Component {
     render() {
-
         return (
             <Layout>
                 <Helmet
@@ -28,63 +27,52 @@ class HomeIndex extends React.Component {
                 <Banner />
 
                 <div id="main">
-                    <section id="one" className="tiles">
-                        <article style={{backgroundImage: `url(${harbr})`}}>
-                            <header className="major">
-                                <h3>Current Work</h3>
-                                <p>Learn more about Harbr</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${headshot})`}}>
-                            <header className="major">
-                                <h3>Tempus</h3>
-                                <p>feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${harbrChristmas})`}}>
-                            <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic04})`}}>
-                            <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                    </section>
                     <section id="two">
                         <div className="inner">
                             <header className="major">
-                                <h2>Massa libero</h2>
+                                <h2>Welcome to my site!</h2>
                             </header>
-                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-                            <ul className="actions">
-                                <li><Link to="/landing" className="button next">Get Started</Link></li>
+                            <p>This is a personal project I created that has helped me achieve a few things:</p>
+                            <ul>
+                                <li>Share my story with the world</li>
+                                <li>Show off my latest projects</li>
+                                <li>Have a space to share my opinions on things, and teach others lessons I've learned along the way</li>
+                                <li>Show my creativity</li>
+                                <li>Have a space to work with some new technologies (this site is using Gatsby JS)</li>
                             </ul>
                         </div>
                     </section>
+                    <section id="one" className="tiles">
+                        <article /*style={{backgroundImage: `url(${harbr})`}}*/>
+                            <header className="major">
+                                <h3>About Me</h3>
+                                <p>I went from being a girl who was very unconfident to being a women who had more confidence then she ever had before. I live in two very male dominated fields - programming and lifting.</p>
+                            </header>
+                            <Link to="/about" className="link primary"></Link>
+                        </article>
+                        <article /*style={{backgroundImage: `url(${headshot})`}}*/>
+                            <header className="major">
+                                <h3>Work</h3>
+                                <p>I have been working for over five years in software development. Check out my resume and some of my past/current projects.</p>
+                            </header>
+                            <Link to="/work" className="link primary"></Link>
+                        </article>
+                        <article /*style={{backgroundImage: `url(${harbrChristmas})`}}*/>
+                            <header className="major">
+                                <h3>Blog</h3>
+                                <p>I'll share my tips and tricks with fitness, health, coding, adulting, travelling adventures!</p>
+                            </header>
+                            <Link to="/blog" className="link primary"></Link>
+                        </article>
+                        <article /*style={{backgroundImage: `url(${pic04})`}}*/>
+                            <header className="major">
+                                <h3>Contact</h3>
+                                <p>Want to get in touch? Email my regarding speaking/outreach opportunities, freelance work, and sponsorship.</p>
+                            </header>
+                            <Link to="/contact" className="link primary"></Link>
+                        </article>
+                    </section>
                 </div>
-
             </Layout>
         )
     }
