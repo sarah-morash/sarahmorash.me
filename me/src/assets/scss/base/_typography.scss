@@ -129,11 +129,13 @@
 	}
 
 	code {
-		background: _palette(border-bg);
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
+		border: 2px solid #676888;
+		border-bottom-color: #EED04F;
+		border-right-color: #EED04F;
 	}
 
 	pre {
@@ -170,4 +172,11 @@
 
 	.align-right {
 		text-align: right;
+	}
+
+	@font-face{
+		font-family: 'Fira Code';
+		src: url('../fonts/FiraCode-Light.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
 	}

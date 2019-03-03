@@ -13,7 +13,7 @@ const Footer = (props) => (
             </ul>
             <ul className="copyright">
             <img src={initials} className="image icon" alt="SM" />
-                <li>Sarah Morash</li>
+                {/* <li>Sarah Morash</li> */}
             </ul>
         </div>
     </footer>

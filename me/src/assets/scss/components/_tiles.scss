@@ -34,7 +34,7 @@
 			min-height: 23em;
 			overflow: hidden;
 			position: relative;
-			width: 40%;
+			width: 50%;
 
 			.image {
 				display: none;
@@ -102,44 +102,44 @@
 				opacity: 0;
 			}
 
-			&:nth-child(4n - 1),
-			&:nth-child(4n - 2) {
-				width: 60%;
-			}
+			// &:nth-child(4n - 1),
+			// &:nth-child(4n - 2) {
+			// 	width: 60%;
+			// }
 
 			&:nth-child(6n - 5) {
 				&:before {
-					background-color: _palette(accent1);
+					background: linear-gradient(180deg, _palette(accent2), _palette(accent3));
 				}
 			}
 
 			&:nth-child(6n - 4) {
 				&:before {
-					background-color: _palette(accent2);
+					background: linear-gradient(180deg, _palette(accent3), _palette(accent1));
 				}
 			}
 
 			&:nth-child(6n - 3) {
 				&:before {
-					background-color: _palette(accent2);
+					background: linear-gradient(180deg, _palette(accent1), _palette(accent3));
 				}
 			}
 
 			&:nth-child(6n - 2) {
 				&:before {
-					background-color: _palette(accent1);
+					background: linear-gradient(180deg, _palette(accent3), _palette(accent2));
 				}
 			}
 
 			&:nth-child(6n - 1) {
 				&:before {
-					background-color: _palette(accent1);
+					background: linear-gradient(90deg, _palette(accent1), _palette(accent3));
 				}
 			}
 
 			&:nth-child(6n) {
 				&:before {
-					background-color: _palette(accent2);
+					background: linear-gradient(90deg, _palette(accent3), _palette(accent2));
 				}
 			}
 		}

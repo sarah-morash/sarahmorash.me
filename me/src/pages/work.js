@@ -4,6 +4,12 @@ import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 
 import harbr from '../assets/images/harbr.png'
+import tnb from '../assets/images/TNB.png'
+import top from '../assets/images/TOP.png'
+import mattamy from '../assets/images/MATTAMY.png'
+import rogers from '../assets/images/ROGERS.png'
+import nslc from '../assets/images/NSLC.png'
+import wholesale from '../assets/images/WHOLESALE.png'
 
 const Work = (props) => (
     <Layout>
@@ -54,7 +60,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="https://www.tourismnewbrunswick.ca/" target="_blank">
                                     <span>
-                                        <img src="dist/images/TNB.png" />
+                                        <img src={tnb} className="image preview" alt="Tourism New Brunswick" />
                                     </span>
                                 </a>
                                 <div class="tile-description">
@@ -69,7 +75,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="https://top.tourismnewbrunswick.ca/" target="_blank">
                                     <span>
-                                        <img src="dist/images/TOP.png" />
+                                        <img src={top} className="image preview" alt="Tourism Operator Portal" />
                                     </span>
                                 </a>
                                 <div class="tile-description">
@@ -84,7 +90,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="https://mattamyhomes.com/" target="_blank">
                                     <span>
-                                        <img src="dist/images/Mattamy.png" />
+                                        <img src={mattamy} className="image preview" alt="Mattamy Homes" />
                                     </span>
                                 </a>
                                 <div class="tile-description">
@@ -99,7 +105,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="http://www.dealercentral.ca/" target="_blank">
                                     <span>
-                                        <img src="dist/images/ROGERS.png" />
+                                        <img src={rogers} className="image preview" alt="Rogers Dealer Central" />
                                     </span>
                                 </a>
                                 <div class="tile-description">
@@ -114,7 +120,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="https://www.mynslc.com/" target="_blank">
                                     <span>
-                                        <img src="dist/images/NSLC.png" />
+                                        <img src={nslc} className="image preview" alt="Nova Scotia Liquor Corporation" />
                                     </span>
                                 </a>
                                 <div class="tile-description">
@@ -129,7 +135,7 @@ const Work = (props) => (
                             <div class="tile-container">
                                 <a href="https://www.mynslcwholesale.com/" target="_blank">
                                     <span>
-                                        <img src="dist/images/Wholesale.png" />
+                                        <img src={wholesale} className="image preview" alt="MyNSLC Wholesale" />
                                     </span>
                                 </a>
                                 <div class="tile-description">

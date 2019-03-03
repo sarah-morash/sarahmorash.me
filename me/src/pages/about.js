@@ -4,9 +4,9 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 
-import pic08 from '../assets/images/pic08.jpg'
-import pic09 from '../assets/images/pic09.jpg'
-import pic10 from '../assets/images/pic10.jpg'
+import work from '../assets/images/work.jpg'
+import blog from '../assets/images/coffee.jpg'
+
 
 const About = (props) => (
     <Layout>
@@ -41,20 +41,21 @@ const About = (props) => (
                     <p>I had 3 co-op jobs in university</p>
                 </div>
             </section>
-            <section id="two" className="spotlights">
-                <section>
-                    {/* <Link to="/contact" className="image">
-                        <img src={pic08} alt="" />
-                    </Link> */}
-                    <div className="content">
-                        <div className="inner">
-                            <p>If you want to know more about what's happening in my life, check out my blog.</p>
-                            <ul className="actions">
-                                <li><Link to="/contact" className="button">Check out my blog!</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+            <section id="two" className="tiles">
+                <article style={{backgroundImage: `url(${work})`}}>
+                    <header className="major">
+                        <h3>Work</h3>
+                        <p>I have been working for over five years in software development. Check out my resume and some of my past/current projects.</p>
+                    </header>
+                    <Link to="/work" className="link primary"></Link>
+                </article>
+                <article style={{backgroundImage: `url(${blog})`}}>
+                    <header className="major">
+                        <h3>Blog</h3>
+                        <p>I'll share my tips and tricks with fitness, health, coding, adulting, travelling adventures!</p>
+                    </header>
+                    <Link to="/blog" className="link primary"></Link>
+                </article>
             </section>
         </div>
     </Layout>

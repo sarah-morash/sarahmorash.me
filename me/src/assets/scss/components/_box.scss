@@ -7,7 +7,9 @@
 /* Box */
 
 	.box {
-		border: solid 1px _palette(border);
+		border: 2px solid #676888;
+		border-bottom-color: #EED04F;
+		border-right-color: #EED04F;
 		margin-bottom: _size(element-margin);
 		padding: 1.5em;
 
