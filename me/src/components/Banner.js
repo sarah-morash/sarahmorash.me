@@ -18,9 +18,10 @@ class Banner extends React.Component {
                         <Typed 
                         className="typedContainer"
                         strings={[
-                        '>  I am a programmer',
-                        '>  I am a lifter',
-                        '>  I am a creative']}
+                        '>  I love to code',
+                        '>  I love to lift weights',
+                        '>  I love to design things and be creative',
+                        '>  I love to cheer on the Halifax Mooseheads #GOMOOSEGO!']}
                         typeSpeed={40}
                         backSpeed={50} 
                         attr="placeholder"

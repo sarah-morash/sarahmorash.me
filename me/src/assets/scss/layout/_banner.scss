@@ -116,7 +116,11 @@
 		}
 
 		&.major {
-			height: 75vh;
+			height: auto;
+			min-height: 0;
+			max-height: none;
+			min-height: 400px;
+			// height: 75vh;
 			// min-height: 30em;
 			// max-height: 50em;
 

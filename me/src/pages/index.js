@@ -8,6 +8,7 @@ import about from '../assets/images/about.png'
 import work from '../assets/images/work.jpg'
 import blog from '../assets/images/coffee.jpg'
 import contact from '../assets/images/contact.jpg'
+import welcome from '../assets/images/hi.png'
 
 class HomeIndex extends React.Component {
     render() {
@@ -29,15 +30,16 @@ class HomeIndex extends React.Component {
                         <div className="inner">
                             <header className="major">
                                 <h2>Welcome to my site!</h2>
+                                <p>This is a personal project I created that has helped me achieve a few things:</p>
+                                <ul>
+                                    <li>Share my story with the world</li>
+                                    <li>Show off my latest projects</li>
+                                    <li>Have a space to share my opinions on things, and teach others lessons I've learned along the way</li>
+                                    <li>Show my creativity</li>
+                                    <li>Have a space to work with some new technologies (this site is using Gatsby JS)</li>
+                                </ul>
                             </header>
-                            <p>This is a personal project I created that has helped me achieve a few things:</p>
-                            <ul>
-                                <li>Share my story with the world</li>
-                                <li>Show off my latest projects</li>
-                                <li>Have a space to share my opinions on things, and teach others lessons I've learned along the way</li>
-                                <li>Show my creativity</li>
-                                <li>Have a space to work with some new technologies (this site is using Gatsby JS)</li>
-                            </ul>
+                            <img src={welcome} alt="hi" />
                         </div>
                     </section>
                     <section id="one" className="tiles">

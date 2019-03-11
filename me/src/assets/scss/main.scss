@@ -29,14 +29,37 @@
 
 	@mixin inner {
 		> .inner {
-			@include padding(4em, 0);
+			// @include padding(4em, 0);
 			margin: 0 auto;
-			max-width: _size(inner);
-			width: calc(100% - 6em);
+			// max-width: _size(inner);
+			// width: calc(100% - 6em);
+			display: flex;
+			flex-direction: column;
+			padding: 4em 2em;
+			width: calc(100% - 3em);
 
 			@include breakpoint(small) {
 				@include padding(3em, 0);
 				width: calc(100% - 3em);
+			}
+
+			.copyright {
+				margin-left: auto;
+
+				img {
+					width: 60px;
+					height: 60px;
+				}
+			}
+
+			img {
+				// display: inline;
+				margin-left: auto;
+				width: 40%;
+				height: 100%;
+				max-width: 310px;
+				margin-top: auto;
+				margin-bottom: auto;
 			}
 		}
 	}
