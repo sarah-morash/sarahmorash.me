@@ -1,21 +1,26 @@
 {
-  "name": "gatsby-starter-forty-v2",
-  "description": "Gatsby Starter - Forty V2",
+  "name": "sarah-morash",
+  "description": "Portfolio Site",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Sarah Morash",
   "dependencies": {
-    "gatsby": "^2.0.76",
+    "@hot-loader/react-dom": "^16.8.4",
+    "dotenv": "^7.0.0",
+    "firebase": "^5.9.1",
+    "gatsby": "^2.2.9",
     "gatsby-plugin-manifest": "^2.0.9",
-    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-source-filesystem": "^2.0.22",
-    "gatsby-transformer-remark": "^2.2.6",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
+    "net": "^1.0.2",
     "node-sass": "^4.11.0",
-    "react": "^16.6.3",
+    "react": "16.8.4",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "react-typed": "^1.1.0"
+    "react-typed": "^1.1.0",
+    "tls": "0.0.1"
   },
   "keywords": [
     "gatsby"

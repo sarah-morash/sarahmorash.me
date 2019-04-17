@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Forty V2",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Forty by HTML5 UP"
+    title: "Sarah Morash",
+    author: "Sarah Morash",
+    description: "A portfolio site & blog"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages",
+        name: "blog",
       },
     },
   ],

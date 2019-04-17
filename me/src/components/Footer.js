@@ -12,8 +12,9 @@ const Footer = (props) => (
                 <li><a href="https://github.com/sarah-morash" target="_blank" className="icon alt fa-github"><span className="label">Instagram</span></a></li>
             </ul>
             <ul className="copyright">
-            <img src={initials} className="image icon" alt="SM" />
-                {/* <li>Sarah Morash</li> */}
+                <button onClick={() => {window.scroll({top: 0, left: 0, behavior: "smooth"})}}>
+                    <img src={initials} className="image icon" alt="SM" />
+                </button>
             </ul>
         </div>
     </footer>

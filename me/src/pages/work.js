@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
+import Slide from '../components/Slide'
 
 import harbr from '../assets/images/harbr.png'
 import tnb from '../assets/images/TNB.png'
@@ -57,96 +58,60 @@ const Work = (props) => (
                             </div>
                         </div>
                         <div class="wrapper">
-                            <div class="tile-container">
-                                <a href="https://www.tourismnewbrunswick.ca/" target="_blank">
-                                    <span>
-                                        <img src={tnb} className="image preview" alt="Tourism New Brunswick" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>Tourism New Brunswick</strong>
-                                    </p>
-                                    <p>Website redesign, support & maintenance (T4G, 2015)</p>
-                                    <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
-                                    <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
-                                </div>
-                            </div>
-                            <div class="tile-container">
-                                <a href="https://top.tourismnewbrunswick.ca/" target="_blank">
-                                    <span>
-                                        <img src={top} className="image preview" alt="Tourism Operator Portal" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>Tourism Operator Portal</strong>
-                                    </p>
-                                    <p>Website redesign, support & maintenance (T4G, 2016)</p>
-                                    <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
-                                    <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET MVC
-                                </div>
-                            </div>
-                            <div class="tile-container">
-                                <a href="https://mattamyhomes.com/" target="_blank">
-                                    <span>
-                                        <img src={mattamy} className="image preview" alt="Mattamy Homes" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>Mattamy Homes</strong>
-                                    </p>
-                                    <p>Website redesign & re-platform, support & maintenance (T4G, 2016)</p>
-                                    <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
-                                    <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET MVC
-                                </div>
-                            </div>
-                            <div class="tile-container">
-                                <a href="http://www.dealercentral.ca/" target="_blank">
-                                    <span>
-                                        <img src={rogers} className="image preview" alt="Rogers Dealer Central" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>Rogers Dealer Central</strong>
-                                    </p>
-                                    <p>Website redesign & re-platform (T4G, 2017)</p>
+                            <Slide
+                                title={"Tourism New Brunswick"}
+                                image={tnb}
+                                link={"https://www.tourismnewbrunswick.ca/"}
+                            >
+                                <p>Website redesign, support & maintenance (T4G, 2015)</p>
+                                <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
+                                <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
+                            </Slide>
+                            <Slide
+                                title={"Tourism Operator Portal"}
+                                image={top}
+                                link={"https://top.tourismnewbrunswick.ca/"}
+                            >
+                               <p>Website redesign, support & maintenance (T4G, 2016)</p>
+                                <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
+                                <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET MVC
+                            </Slide>
+                            <Slide
+                                title={"Mattamy Homes"}
+                                image={mattamy}
+                                link={"https://mattamyhomes.com/"}
+                            >
+                                <p>Website redesign & re-platform, support & maintenance (T4G, 2016)</p>
+                                <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
+                                <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET MVC
+                            </Slide>
+                            <Slide
+                                title={"Rogers Dealer Central"}
+                                image={rogers}
+                                link={"http://www.dealercentral.ca/"}
+                            >
+                                <p>Website redesign & re-platform (T4G, 2017)</p>
                                     <span class="kentico technology-identifier"></span>&nbsp;Kentico
                                     <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
-                                </div>
-                            </div>
-                            <div class="tile-container">
-                                <a href="https://www.mynslc.com/" target="_blank">
-                                    <span>
-                                        <img src={nslc} className="image preview" alt="Nova Scotia Liquor Corporation" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>Nova Scotia Liquor Corporation</strong>
-                                    </p>
-                                    <p>Support & maintenance (T4G, 2017)</p>
-                                    <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
-                                    <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
-                                </div>
-                            </div>
-                            <div class="tile-container">
-                                <a href="https://www.mynslcwholesale.com/" target="_blank">
-                                    <span>
-                                        <img src={wholesale} className="image preview" alt="MyNSLC Wholesale" />
-                                    </span>
-                                </a>
-                                <div class="tile-description">
-                                    <p>
-                                        <strong>MyNSLC Wholesale</strong>
-                                    </p>
-                                    <p>Website build (T4G, 2018)</p>
-                                    <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
-                                    <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
-                                </div>
-                            </div>
+                            </Slide>
+                            <Slide
+                                title={"Nova Scotia Liquor Corporation"}
+                                image={nslc}
+                                link={"https://www.mynslc.com/"}
+                            >
+                                <p>Support & maintenance (T4G, 2017)</p>
+                                <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
+                                <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
+                            </Slide>                           
+                            <Slide
+                                title={"MyNSLC Wholesale"}
+                                image={wholesale}
+                                link={"https://www.mynslcwholesale.com/"}
+                            >
+                                <p>Website build (T4G, 2018)</p>
+                                <span class="sitecore technology-identifier"></span>&nbsp;Sitecore
+                                <span class="aspnet technology-identifier"></span>&nbsp;ASP.NET Webforms
+                            </Slide>                           
                         </div>
                     </div>
                 </div>
