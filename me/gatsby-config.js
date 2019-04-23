@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Sarah Morash",
-    author: "Sarah Morash",
-    description: "A portfolio site & blog"
+    title: 'Sarah Morash',
+    author: 'Sarah Morash',
+    description: 'A portfolio site & blog',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,14 +19,16 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    `gatsby-transformer-remark`,
+    'gatsby-transformer-remark',
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "blog",
+        name: 'blog',
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ],
 }
