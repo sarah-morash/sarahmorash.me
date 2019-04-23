@@ -21,6 +21,7 @@ import graphql from '../assets/images/graphql.png'
 import react from '../assets/images/react.png'
 import sql from '../assets/images/sql.png'
 import net from '../assets/images/net.png'
+import resume from '../assets/files/Resume_SarahMorash.pdf'
 
 const Work = props => (
   <Layout>
@@ -50,7 +51,7 @@ const Work = props => (
             <br />
             <br />- Simon Sinek
           </blockquote>
-          <a className="button" href="../assets/files/resume.pdf">
+          <a className="button" href={resume}>
             Download my resume
           </a>
         </div>
