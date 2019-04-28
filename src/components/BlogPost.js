@@ -4,8 +4,8 @@ import BannerLanding from "../components/BannerLanding";
 import { graphql } from "gatsby";
 
 function BlogPost(props) {
-  const post = props.data.markdownRemark;
-  const { title, description, thumbnail, date } = post.frontmatter;
+  const getPost = props.data.allMarkdownRemark.edges[0].node;
+  const { title, description, thumbnail, date } = getPost.frontmatter;
   return (
     <Layout>
       <BannerLanding title={title} subtitle={description} />
@@ -30,9 +30,6 @@ export const post = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          fields {
-            slug
-          }
           timeToRead
           fileAbsolutePath
           frontmatter {

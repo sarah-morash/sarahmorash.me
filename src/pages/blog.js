@@ -1,13 +1,11 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
-
-// import Img from 'gatsby-image'
-import BannerLanding from '../components/BannerLanding'
+import React from "react";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../components/layout";
+import BannerLanding from "../components/BannerLanding";
 
 const Blog = props => {
-  const getPosts = props.data.allMarkdownRemark.edges
+  const getPosts = props.data.allMarkdownRemark.edges;
   return (
     <Layout>
       <Helmet>
@@ -61,10 +59,10 @@ const Blog = props => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
 
 export const posts = graphql`
   query GetPosts {
@@ -87,4 +85,4 @@ export const posts = graphql`
       }
     }
   }
-`
+`;
