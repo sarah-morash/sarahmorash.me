@@ -47,6 +47,7 @@ const Blog = props => {
                       <img
                         className="image"
                         src={encodeURI(node.frontmatter.thumbnail)}
+                        alt={node.frontmatter.title}
                       />
                       <p className="text">{node.excerpt}</p>
                     </div>

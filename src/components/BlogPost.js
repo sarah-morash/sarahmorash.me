@@ -5,17 +5,17 @@ import { graphql } from "gatsby";
 
 function BlogPost(props) {
   const getPost = props.data.allMarkdownRemark.edges[0].node;
+  console.log(getPost);
   const { title, description, thumbnail, date } = getPost.frontmatter;
+  const { html } = getPost;
+
   return (
     <Layout>
       <BannerLanding title={title} subtitle={description} />
       <section className="blogPost">
         <div className="inner">
-          <img className="image" src={encodeURI(thumbnail)} />
-          <div
-            className="text"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <img className="image" src={encodeURI(thumbnail)} alt={title} />
+          <div className="text" dangerouslySetInnerHTML={{ __html: html }} />
           <span className="date">{date}</span>
         </div>
       </section>
@@ -38,7 +38,7 @@ export const post = graphql`
             description
             thumbnail
           }
-          excerpt(pruneLength: 250)
+          html
         }
       }
     }
