@@ -1,11 +1,11 @@
-import React from 'react'
-import Layout from '../components/layout'
-import BannerLanding from '../components/BannerLanding'
-import { graphql } from 'gatsby'
+import React from "react";
+import Layout from "../components/layout";
+import BannerLanding from "../components/BannerLanding";
+import { graphql } from "gatsby";
 
 function BlogPost(props) {
-  const post = props.data.markdownRemark
-  const { title, description, thumbnail, date } = post.frontmatter
+  const post = props.data.markdownRemark;
+  const { title, description, thumbnail, date } = post.frontmatter;
   return (
     <Layout>
       <BannerLanding title={title} subtitle={description} />
@@ -20,26 +20,10 @@ function BlogPost(props) {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
-export default BlogPost
-export const query = graphql`
-  query PostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      fileAbsolutePath
-      frontmatter {
-        title
-        date(formatString: "MMMM Do YYYY")
-        description
-        thumbnail
-      }
-      excerpt(pruneLength: 250)
-    }
-  }
-`
+export default BlogPost;
 
 export const post = graphql`
   query GetPost {
@@ -62,4 +46,4 @@ export const post = graphql`
       }
     }
   }
-`
+`;
