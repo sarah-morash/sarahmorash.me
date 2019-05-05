@@ -40,16 +40,20 @@ const Blog = props => {
               <>
                 <Link to={node.fields.slug} className="link blogPost">
                   <div className="post-list">
-                    <h1 className="title">{node.frontmatter.title}</h1>
-                    <span className="date">{node.frontmatter.date} / </span>
-                    <span className="readTime">{node.timeToRead} min read</span>
                     <div className="content">
                       <img
                         className="image"
                         src={encodeURI(node.frontmatter.thumbnail)}
                         alt={node.frontmatter.title}
                       />
-                      <p className="text">{node.excerpt}</p>
+                      <div className="innerContent">
+                        <h1 className="title">{node.frontmatter.title}</h1>
+                        <p className="description">
+                          {node.frontmatter.description}
+                        </p>
+                        <p className="date">{node.frontmatter.date}</p>
+                        <p className="readTime">{node.timeToRead} min read</p>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -81,7 +85,7 @@ export const posts = graphql`
             description
             thumbnail
           }
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 150)
         }
       }
     }

@@ -20,13 +20,13 @@ module.exports = {
         icon: "src/assets/images/website-icon.png"
       }
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "imgs",
-        path: `/${__dirname}/src/assets/images/`
-      }
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "imgs",
+    //     path: `/${__dirname}/src/assets/images/`
+    //   }
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
