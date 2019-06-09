@@ -90,6 +90,7 @@
       align-items: flex-start;
       justify-content: center;
       margin: auto;
+      width: 50%;
 
       .date,
       .readTime,
@@ -99,6 +100,30 @@
         letter-spacing: 0.25em;
         margin-bottom: 0;
         text-transform: uppercase;
+      }
+    }
+
+    .arrows {
+      font-family: "Fira Code";
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 900;
+      opacity: 1;
+      color: #fff;
+
+      .arrow-1 {
+        opacity: 0.2;
+      }
+
+      .arrow-2 {
+        opacity: 0.5;
+      }
+
+      .arrow-3 {
+        opacity: 0.8;
       }
     }
   }

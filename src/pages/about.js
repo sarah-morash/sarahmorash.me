@@ -1,22 +1,22 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import BannerLanding from '../components/BannerLanding'
+import React from "react";
+import { Link } from "gatsby";
+import Helmet from "react-helmet";
+import Layout from "../components/layout";
+import BannerLanding from "../components/BannerLanding";
 
-import work from '../assets/images/work.jpg'
-import blog from '../assets/images/coffee.jpg'
+import work from "../assets/images/work.jpg";
+import blog from "../assets/images/coffee.jpg";
 
 const About = props => (
   <Layout>
     <Helmet
       title="Sarah Morash"
       meta={[
-        { name: 'description', content: 'Sarah Morash' },
+        { name: "description", content: "Sarah Morash" },
         {
-          name: 'keywords',
-          content: 'portfolio, blog, personal, coding, technology',
-        },
+          name: "keywords",
+          content: "portfolio, blog, personal, coding, technology"
+        }
       ]}
     />
 
@@ -33,33 +33,35 @@ const About = props => (
                 </code>
               </pre>
             </h2>
-            <p>
-              My name is Sarah and I have been working in the technology
-              industry for over 5 years.
-            </p>
-            <p>
-              Born and raised in Halifax NS, I have lived here my whole life and
-              have become an expert on most things Haligonian.
-            </p>
-            <p>
-              I graduated from Dalhousie with a BCS with co-op, minor in
-              Mathematics and specializing in flute performance in 2015. I then
-              worked at T4G Limited working on CMS projects focusing on backend
-              development. After 4 years, I decided to make a change and focus
-              on frontend development, which is when I joined a startup company
-              called Harbr!
-            </p>
-            <p>
-              When I am not coding for work or fun, I enjoy living a healthy and
-              active lifestyle. I go to the gym about 5 times per week, and am
-              following a powerlifting/bodybuilding program. I hope one day to
-              enter either a powerlifting or a bodybuilding competition, but I
-              still have a bit to go!
-            </p>
-            <p>
-              Check out my blog and follow my Instagram to stay up-to-date on my
-              work, projects, and lifting progress.
-            </p>
+            <div className="border">
+              <p>
+                My name is Sarah and I have been working in the technology
+                industry for over 5 years.
+              </p>
+              <p>
+                Born and raised in Halifax NS, I have lived here my whole life
+                and have become an expert on most things Haligonian.
+              </p>
+              <p>
+                I graduated from Dalhousie with a BCS with co-op, minor in
+                Mathematics and specializing in flute performance in 2015. I
+                then worked at T4G Limited working on CMS projects focusing on
+                backend development. After 4 years, I decided to make a change
+                and focus on frontend development, which is when I joined a
+                startup company called Harbr!
+              </p>
+              <p>
+                When I am not coding for work or fun, I enjoy living a healthy
+                and active lifestyle. I go to the gym about 5 times per week,
+                and am following a powerlifting/bodybuilding program. I hope one
+                day to enter either a powerlifting or a bodybuilding
+                competition, but I still have a bit to go!
+              </p>
+              <p>
+                Check out my blog and follow my Instagram to stay up-to-date on
+                my work, projects, and lifting progress.
+              </p>
+            </div>
           </header>
         </div>
       </section>
@@ -87,6 +89,6 @@ const About = props => (
       </section>
     </div>
   </Layout>
-)
+);
 
-export default About
+export default About;

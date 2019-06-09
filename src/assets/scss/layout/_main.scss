@@ -27,6 +27,8 @@
   header {
     .major {
       width: 60%;
+      transition: background 2s ease-in-out;
+      transition: color 2s ease-in-out;
     }
   }
 
@@ -63,5 +65,9 @@
     border: none;
     text-align: left;
     text-transform: uppercase;
+  }
+
+  .hide {
+    display: none;
   }
 }

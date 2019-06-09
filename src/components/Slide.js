@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const Slide = props => (
-  <article style={{ backgroundImage: `url(${props.image})` }}>
-    <header className="major">
-      <h3>{props.title}</h3>
-      <p>{props.text}</p>
-      <p>{props.children}</p>
-    </header>
-    <a target="_blank" href={props.link} className="link primary" />
-  </article>
-)
+const Slide = props => {
+  const [isHidden, updateHiddenState] = useState(false);
 
-export default Slide
+  return (
+    <article
+      onMouseOver={() => updateHiddenState(true)}
+      onMouseOut={() => updateHiddenState(false)}
+      style={{ backgroundImage: `url(${props.image})` }}
+    >
+      <header className={`major ${isHidden ? "hide" : ""}`}>
+        <h3>{props.title}</h3>
+        <p>{props.text}</p>
+        <p>{props.children}</p>
+      </header>
+      <a target="_blank" href={props.link} className="link primary" />
+    </article>
+  );
+};
+
+export default Slide;

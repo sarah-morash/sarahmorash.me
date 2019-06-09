@@ -54,6 +54,11 @@ const Blog = props => {
                         <p className="date">{node.frontmatter.date}</p>
                         <p className="readTime">{node.timeToRead} min read</p>
                       </div>
+                      <div className="arrows">
+                        <span className="arrow-1">></span>
+                        <span className="arrow-2">></span>
+                        <span className="arrow-3">></span>
+                      </div>
                     </div>
                   </div>
                 </Link>
