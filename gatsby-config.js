@@ -11,22 +11,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Smore's Portfolio",
+        short_name: "Smore",
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",
-        display: "minimal-ui",
+        display: "standalone",
         icon: "src/assets/images/website-icon.png"
       }
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "imgs",
-    //     path: `/${__dirname}/src/assets/images/`
-    //   }
-    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -34,11 +27,24 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-141718999-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "sarahmorash.me",
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
+    "gatsby-plugin-netlify"
   ]
 };

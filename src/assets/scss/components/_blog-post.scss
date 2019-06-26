@@ -104,13 +104,14 @@
     }
 
     .arrows {
+      display: none;
       font-family: "Fira Code";
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       font-size: 30px;
       font-weight: 900;
+      transition: display .25s ease-in;
       opacity: 1;
       color: #fff;
 
@@ -124,6 +125,10 @@
 
       .arrow-3 {
         opacity: 0.8;
+      }
+
+      &.showArrows {
+        display: flex;
       }
     }
   }
