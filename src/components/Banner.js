@@ -1,9 +1,9 @@
-import React from 'react'
-import Typed from 'react-typed'
+import React from "react";
+import Typed from "react-typed";
 
 class Banner extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -17,10 +17,10 @@ class Banner extends React.Component {
             <Typed
               className="typedContainer"
               strings={[
-                '>  I love to code',
-                '>  I love to teach',
-                '>  I love to lift',
-                '>  I love to be creative',
+                ">  I love to code",
+                ">  I love to teach",
+                ">  I love to lift",
+                ">  I love to be creative"
               ]}
               typeSpeed={40}
               backSpeed={50}
@@ -35,8 +35,8 @@ class Banner extends React.Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
-export default Banner
+export default Banner;

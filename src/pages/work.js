@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import BannerLanding from "../components/BannerLanding";
 import Slide from "../components/Slide";
 
+import redspace from "../assets/images/redspace.png";
 import harbr from "../assets/images/platform.png";
 import harbrweb from "../assets/images/harbrweb.png";
 import tnb from "../assets/images/TNB.png";
@@ -25,17 +26,6 @@ import resume from "../assets/files/Resume_SarahMorash.pdf";
 
 const Work = props => (
   <Layout>
-    <Helmet
-      title="Sarah Morash"
-      meta={[
-        { name: "description", content: "Sarah Morash" },
-        {
-          name: "keywords",
-          content: "portfolio, blog, personal, coding, technology"
-        }
-      ]}
-    />
-
     <BannerLanding title="Work" />
 
     <div id="main">
@@ -51,6 +41,11 @@ const Work = props => (
             <br />
             <br />- Simon Sinek
           </blockquote>
+          <p>
+            I am a motivated individual who is constantly looking to better
+            herself and learn more. I love to share what I've learned and help
+            others!
+          </p>
           <a className="button" href={resume}>
             Download my resume
           </a>
@@ -60,6 +55,18 @@ const Work = props => (
         <div className="intro no-border">
           <h1>Current/Past Projects</h1>
         </div>
+      </section>
+      <h3 className="position">REDspace (2019 +)</h3>
+      <section className="tiles">
+        <Slide
+          title={"BR/Live"}
+          text={"Feature creation/optimization & maintenance"}
+          image={redspace}
+          link={"https://live.bleacherreport.com/"}
+        >
+          <img src={react} className="icon" />
+          <img src={redux} className="icon" />
+        </Slide>
       </section>
       <h3 className="position">Harbr (2018 - 2019)</h3>
       <section className="tiles">

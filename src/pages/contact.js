@@ -1,21 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import BannerLanding from '../components/BannerLanding'
+import React from "react";
+import Layout from "../components/layout";
+import BannerLanding from "../components/BannerLanding";
 
 const Contact = props => (
   <Layout>
-    <Helmet
-      title="Sarah Morash"
-      meta={[
-        { name: 'description', content: 'Sarah Morash' },
-        {
-          name: 'keywords',
-          content: 'portfolio, blog, personal, coding, technology',
-        },
-      ]}
-    />
-
     <BannerLanding title="Contact" subtitle="" />
 
     <div id="main contact">
@@ -31,6 +19,6 @@ const Contact = props => (
       </section>
     </div>
   </Layout>
-)
+);
 
-export default Contact
+export default Contact;

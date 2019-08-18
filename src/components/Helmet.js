@@ -1,0 +1,51 @@
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+
+const Head = ({title}) => (
+  <Helmet>
+    {/* Google Tag Manager */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141718999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141718999-1');
+    </script>
+
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NTPZ74F');
+    </script>
+    
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="All of the latest blog posts by Sarah Morash"
+    />
+    <meta
+      name="keywords"
+      content="portfolio, blog, personal, coding, technology, fitness, health, travel"
+    />
+    <meta property="og:title" content="Posts from Smore" />
+    <meta property="og:url" content="https://www.sarahmorash.me/blog/" />
+    <meta name="twitter:title" content="Posts from Smore" />
+    <meta
+      name="twitter:description"
+      content="All of the latest blog posts by Sarah Morash"
+    />
+  </Helmet>
+);
+
+Head.propTypes = {
+    title = PropTypes.string
+};
+
+Head.defaultProps = {
+  title: "Sarah Morash"
+};
+
+export default Head;

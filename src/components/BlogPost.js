@@ -3,11 +3,10 @@ import Layout from "../components/layout";
 import BannerLanding from "../components/BannerLanding";
 import { graphql } from "gatsby";
 
-function BlogPost(props) {
-  const getPost = props.data.allMarkdownRemark.edges[0].node;
-  console.log(getPost);
-  const { title, description, thumbnail, date } = getPost.frontmatter;
-  const { html } = getPost;
+const BlogPost = ({ data, pageContext }) => {
+  const { markdownRemark } = data;
+  const { title, description, thumbnail, date } = markdownRemark.frontmatter;
+  const { html } = markdownRemark.html;
 
   return (
     <Layout>
@@ -21,12 +20,12 @@ function BlogPost(props) {
       </section>
     </Layout>
   );
-}
+};
 
 export default BlogPost;
 
-export const post = graphql`
-  query GetPost {
+export const query = graphql`
+  query query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

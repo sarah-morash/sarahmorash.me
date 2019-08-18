@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Helmet from "react-helmet";
 import classnames from "classnames";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -11,36 +10,19 @@ const Blog = props => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>BLOG | Sarah Morash</title>
-        <meta
-          name="description"
-          content="All of the latest blog posts by Sarah Morash"
-        />
-        <meta
-          name="keywords"
-          content="portfolio, blog, personal, coding, technology, fitness, health, travel"
-        />
-        <meta
-          property="og:description"
-          content="All of the latest blog posts by Sarah Morash"
-        />
-        <meta property="og:title" content="Posts from Smore" />
-        <meta property="og:url" content="https://www.sarahmorash.me/blog/" />
-        <meta name="twitter:title" content="Posts from Smore" />
-        <meta
-          name="twitter:description"
-          content="All of the latest blog posts by Sarah Morash"
-        />
-      </Helmet>
-
       <BannerLanding title="Blog" subtitle="Check out my latests posts" />
 
       <div id="main">
         <section id="one">
           <div className="inner">
             {getPosts.map(({ node }, i) => (
-              <Link to={node.fields.slug} className="link blogPost" key={i} onMouseOver={() => setShowArrows(true)} onMouseOut={() => setShowArrows(false)}>
+              <Link
+                to={node.fields.slug}
+                className="link blogPost"
+                key={i}
+                onMouseOver={() => setShowArrows(true)}
+                onMouseOut={() => setShowArrows(false)}
+              >
                 <div className="post-list">
                   <div className="content">
                     <img
@@ -56,7 +38,12 @@ const Blog = props => {
                       <p className="date">{node.frontmatter.date}</p>
                       <p className="readTime">{node.timeToRead} min read</p>
                     </div>
-                    <div className={classnames(showArrows && "showArrows", "arrows")}>
+                    <div
+                      className={classnames(
+                        showArrows && "showArrows",
+                        "arrows"
+                      )}
+                    >
                       <span className="arrow-1">></span>
                       <span className="arrow-2">></span>
                       <span className="arrow-3">></span>
@@ -80,9 +67,6 @@ export const posts = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          fields {
-            slug
-          }
           timeToRead
           fileAbsolutePath
           frontmatter {

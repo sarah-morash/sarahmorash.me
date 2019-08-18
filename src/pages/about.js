@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import BannerLanding from "../components/BannerLanding";
 
@@ -9,17 +8,6 @@ import blog from "../assets/images/coffee.jpg";
 
 const About = props => (
   <Layout>
-    <Helmet
-      title="Sarah Morash"
-      meta={[
-        { name: "description", content: "Sarah Morash" },
-        {
-          name: "keywords",
-          content: "portfolio, blog, personal, coding, technology"
-        }
-      ]}
-    />
-
     <BannerLanding title="About Me" />
 
     <div id="main">

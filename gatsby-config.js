@@ -36,8 +36,8 @@ module.exports = {
         respectDNT: true,
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "sarahmorash.me",
-      },
+        cookieDomain: "sarahmorash.me"
+      }
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
