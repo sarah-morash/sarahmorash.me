@@ -1,8 +1,10 @@
 import React from "react";
-import "../assets/scss/main.scss";
+
 import Header from "./Nav";
 import Menu from "./Menu";
 import Footer from "./Footer";
+
+import "../assets/scss/main.scss";
 
 class Layout extends React.Component {
   constructor(props) {

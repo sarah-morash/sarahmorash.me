@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/layout";
+
+import Head from "../components/Head";
+import Layout from "../components/Layout";
 import BannerLanding from "../components/BannerLanding";
 
 const Blog = props => {
@@ -10,6 +12,8 @@ const Blog = props => {
 
   return (
     <Layout>
+      <Head title="Blog" />
+
       <BannerLanding title="Blog" subtitle="Check out my latests posts" />
 
       <div id="main">

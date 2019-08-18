@@ -1,6 +1,7 @@
 import React from "react";
-import Helmet from "react-helmet";
-import Layout from "../components/layout";
+
+import Head from "../components/Head";
+import Layout from "../components/Layout";
 import BannerLanding from "../components/BannerLanding";
 import Slide from "../components/Slide";
 
@@ -26,6 +27,8 @@ import resume from "../assets/files/Resume_SarahMorash.pdf";
 
 const Work = props => (
   <Layout>
+    <Head title="Work" />
+
     <BannerLanding title="Work" />
 
     <div id="main">

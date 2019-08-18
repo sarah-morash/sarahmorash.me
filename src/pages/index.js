@@ -1,29 +1,21 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import Banner from '../components/Banner'
+import React from "react";
+import { Link } from "gatsby";
 
-import about from '../assets/images/about.png'
-import work from '../assets/images/work.jpg'
-import blog from '../assets/images/coffee.jpg'
-import contact from '../assets/images/contact.jpg'
-import welcome from '../assets/images/hi.png'
+import Head from "../components/Head";
+import Layout from "../components/Layout";
+import Banner from "../components/Banner";
+
+import about from "../assets/images/about.png";
+import work from "../assets/images/work.jpg";
+import blog from "../assets/images/coffee.jpg";
+import contact from "../assets/images/contact.jpg";
+import welcome from "../assets/images/hi.png";
 
 class HomeIndex extends React.Component {
   render() {
     return (
       <Layout>
-        <Helmet
-          title="Sarah Morash"
-          meta={[
-            { name: 'description', content: 'Sarah Morash' },
-            {
-              name: 'keywords',
-              content: 'portfolio, blog, personal, coding, technology',
-            },
-          ]}
-        />
+        <Head title="Home" />
 
         <Banner />
 
@@ -97,8 +89,8 @@ class HomeIndex extends React.Component {
           </section>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default HomeIndex
+export default HomeIndex;

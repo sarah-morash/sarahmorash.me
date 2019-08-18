@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import Layout from "../components/layout";
+
+import Head from "../components/Head";
+import Layout from "../components/Layout";
 import BannerLanding from "../components/BannerLanding";
 
 import work from "../assets/images/work.jpg";
@@ -8,6 +10,8 @@ import blog from "../assets/images/coffee.jpg";
 
 const About = props => (
   <Layout>
+    <Head title="About" />
+
     <BannerLanding title="About Me" />
 
     <div id="main">

@@ -1,7 +1,7 @@
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 
-const Head = ({title}) => (
+const Head = ({title, description, keywords, socialTitle, socialLink, socialDescription}) => (
   <Helmet>
     {/* Google Tag Manager */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141718999-1"></script>
@@ -9,7 +9,6 @@ const Head = ({title}) => (
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-141718999-1');
     </script>
 
@@ -21,31 +20,41 @@ const Head = ({title}) => (
       })(window,document,'script','dataLayer','GTM-NTPZ74F');
     </script>
     
-    <title>{title}</title>
+    <title>{title} | Sarah Morash</title>
     <meta
       name="description"
-      content="All of the latest blog posts by Sarah Morash"
+      content={description}
     />
     <meta
       name="keywords"
-      content="portfolio, blog, personal, coding, technology, fitness, health, travel"
+      content=`portfolio, blog, personal, coding, technology, ${keywords}`
     />
-    <meta property="og:title" content="Posts from Smore" />
-    <meta property="og:url" content="https://www.sarahmorash.me/blog/" />
-    <meta name="twitter:title" content="Posts from Smore" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:url" content={socialLink} />
+    <meta name="twitter:title" content={socialTitle} />
     <meta
       name="twitter:description"
-      content="All of the latest blog posts by Sarah Morash"
+      content={socialDescription}
     />
   </Helmet>
 );
 
 Head.propTypes = {
-    title = PropTypes.string
+    title: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+    socialTitle: PropTypes.string,
+    socialLink: PropTypes.string,
+    socialDescription: PropTypes.string
 };
 
 Head.defaultProps = {
-  title: "Sarah Morash"
+  title: "",
+  description: "A portfolio & blog created by Sarah Morash (smore)",
+  keywords: "",
+  socialTitle: "Posts from Smore",
+  socialLink: "https://www.sarahmorash.me",
+  socialDescription: "A portfolio & blog created by Sarah Morash (smore)"
 };
 
 export default Head;

@@ -1,9 +1,13 @@
 import React from "react";
-import Layout from "../components/layout";
+
+import Head from "../components/Head";
+import Layout from "../components/Layout";
 import BannerLanding from "../components/BannerLanding";
 
 const Contact = props => (
   <Layout>
+    <Head title="Contact" />
+
     <BannerLanding title="Contact" subtitle="" />
 
     <div id="main contact">

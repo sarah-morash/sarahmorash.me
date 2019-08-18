@@ -1,9 +1,13 @@
 import React from "react";
-import Layout from "../components/layout";
+
+import Layout from "../components/Layout";
+import Head from "../components/Head";
 import BannerLanding from "../components/BannerLanding";
 
 const NotFoundPage = () => (
   <Layout>
+    <Head title="404" />
+
     <BannerLanding title="Page Not Found" />
 
     <div id="main">
