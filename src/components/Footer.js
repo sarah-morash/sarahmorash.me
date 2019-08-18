@@ -9,6 +9,7 @@ const Footer = props => (
           <a
             href="https://twitter.com/sarah_morash"
             target="_blank"
+            rel="noopener noreferrer"
             className="icon alt fa-twitter"
           >
             <span className="label">Twitter</span>
@@ -18,6 +19,7 @@ const Footer = props => (
           <a
             href="https://www.instagram.com/sarah_morash/"
             target="_blank"
+            rel="noopener noreferrer"
             className="icon alt fa-instagram"
           >
             <span className="label">Instagram</span>
@@ -27,6 +29,7 @@ const Footer = props => (
           <a
             href="https://www.linkedin.com/in/sarahmorash/"
             target="_blank"
+            rel="noopener noreferrer"
             className="icon alt fa-linkedin"
           >
             <span className="label">Instagram</span>
@@ -36,6 +39,7 @@ const Footer = props => (
           <a
             href="https://github.com/sarah-morash"
             target="_blank"
+            rel="noopener noreferrer"
             className="icon alt fa-github"
           >
             <span className="label">Instagram</span>

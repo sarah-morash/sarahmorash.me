@@ -67,8 +67,8 @@ const Work = props => (
           image={redspace}
           link={"https://live.bleacherreport.com/"}
         >
-          <img src={react} className="icon" />
-          <img src={redux} className="icon" />
+          <img src={react} className="icon" alt="React" />
+          <img src={redux} className="icon" alt="Redux" />
         </Slide>
       </section>
       <h3 className="position">Harbr (2018 - 2019)</h3>
@@ -79,9 +79,9 @@ const Work = props => (
           image={harbr}
           link={"https://platform.harbr.com/"}
         >
-          <img src={react} className="icon" />
-          <img src={redux} className="icon" />
-          <img src={graphql} className="icon" />
+          <img src={react} className="icon" alt="React" />
+          <img src={redux} className="icon" alt="Redux" />
+          <img src={graphql} className="icon" alt="GraphQL" />
         </Slide>
         <Slide
           title={"Harbr Website"}
@@ -89,7 +89,7 @@ const Work = props => (
           image={harbrweb}
           link={"https://www.harbr.com/"}
         >
-          <img src={wordpress} className="icon" />
+          <img src={wordpress} className="icon" alt="WordPress" />
         </Slide>
       </section>
       <h3 className="position">T4G Limited (2014 - 2018)</h3>
@@ -100,9 +100,9 @@ const Work = props => (
           image={tnb}
           link={"https://www.tourismnewbrunswick.ca/"}
         >
-          <img src={sitecore} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />
+          <img src={sitecore} className="icon" alt="Sitecore" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
         <Slide
           title={"Tourism Operator Portal"}
@@ -110,9 +110,9 @@ const Work = props => (
           image={top}
           link={"https://top.tourismnewbrunswick.ca/"}
         >
-          <img src={sitecore} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />{" "}
+          <img src={sitecore} className="icon" alt="Sitecore" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
         <Slide
           title={"Mattamy Homes"}
@@ -120,9 +120,9 @@ const Work = props => (
           image={mattamy}
           link={"https://mattamyhomes.com/"}
         >
-          <img src={sitecore} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />{" "}
+          <img src={sitecore} className="icon" alt="Sitecore" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
         <Slide
           title={"Rogers Dealer Central"}
@@ -130,9 +130,9 @@ const Work = props => (
           image={rogers}
           link={"http://www.dealercentral.ca/"}
         >
-          <img src={kentico} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />
+          <img src={kentico} className="icon" alt="Kentico" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
         <Slide
           title={"NS Liquor Corporation"}
@@ -140,9 +140,9 @@ const Work = props => (
           image={nslc}
           link={"https://www.mynslc.com/"}
         >
-          <img src={sitecore} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />
+          <img src={sitecore} className="icon" alt="Sitecore" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
         <Slide
           title={"MyNSLC Wholesale"}
@@ -150,9 +150,9 @@ const Work = props => (
           image={wholesale}
           link={"https://www.mynslcwholesale.com/"}
         >
-          <img src={sitecore} className="icon" />
-          <img src={net} className="icon" />
-          <img src={sql} className="icon" />
+          <img src={sitecore} className="icon" alt="Sitecore" />
+          <img src={net} className="icon" alt=".NET" />
+          <img src={sql} className="icon" alt="SQL" />
         </Slide>
       </section>
     </div>

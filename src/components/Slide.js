@@ -14,7 +14,12 @@ const Slide = props => {
         <p>{props.text}</p>
         <p>{props.children}</p>
       </header>
-      <a target="_blank" href={props.link} className="link primary" />
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={props.link}
+        className="link primary"
+      />
     </article>
   );
 };
