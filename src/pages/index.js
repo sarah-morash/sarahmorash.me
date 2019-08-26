@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import Head from "../components/Head";
-import Layout from "../components/Layout";
+import Layout from "../templates/Layout";
 import Hero from "../components/Hero";
 
 import about from "../assets/images/about.png";

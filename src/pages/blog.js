@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { Link, graphql } from "gatsby";
 
 import Head from "../components/Head";
-import Layout from "../components/Layout";
+import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
 const Blog = ({ data }) => {

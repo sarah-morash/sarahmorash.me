@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../components/Layout";
+import Layout from "../templates/Layout";
 import Head from "../components/Head";
 import Banner from "../components/Banner";
 

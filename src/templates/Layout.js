@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import Header from "./Nav";
-import Menu from "./Menu";
-import Footer from "./Footer";
+import Header from "../components/Nav";
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 
 import "../assets/scss/main.scss";
 
