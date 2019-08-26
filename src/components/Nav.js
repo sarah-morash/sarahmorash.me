@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
-const Nav = props => (
+const Nav = ({ onToggleMenu }) => (
   <header id="header" className="alt">
     <Link to="/" className="logo">
       <strong>Sarah</strong> <span>Morash</span>
     </Link>
     <nav>
-      <a className="menu-link" onClick={props.onToggleMenu} href="#">
+      <a className="menu-link" onClick={onToggleMenu} href="#">
         Menu
       </a>
     </nav>

@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src",
-        path: `${__dirname}/src/`
+        name: "posts",
+        path: `${__dirname}/src/pages/blog/posts`
       }
     },
     {
@@ -45,6 +45,7 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
-    "gatsby-plugin-netlify"
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-slug"
   ]
 };

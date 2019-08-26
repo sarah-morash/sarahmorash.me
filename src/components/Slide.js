@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 
-const Slide = props => {
+const Slide = ({ image, title, text, children, link }) => {
   const [isHidden, updateHiddenState] = useState(false);
 
   return (
     <article
       onMouseOver={() => updateHiddenState(true)}
       onMouseOut={() => updateHiddenState(false)}
-      style={{ backgroundImage: `url(${props.image})` }}
+      style={{ backgroundImage: `url(${image})` }}
     >
       <header className={`major ${isHidden ? "hide" : ""}`}>
-        <h3>{props.title}</h3>
-        <p>{props.text}</p>
-        <p>{props.children}</p>
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <p>{children}</p>
       </header>
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href={props.link}
+        href={link}
         className="link primary"
       />
     </article>

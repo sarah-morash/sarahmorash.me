@@ -1,7 +1,11 @@
 import React from "react";
 import initials from "../assets/images/website-icon.png";
 
-const Footer = props => (
+/**
+ * Footer
+ * Global footer showing social icons and copyright info
+ */
+const Footer = () => (
   <footer id="footer">
     <div className="inner">
       <ul className="icons">

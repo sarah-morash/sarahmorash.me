@@ -2,6 +2,7 @@
 title: "Hello, World!"
 description: Baby's first blog post.
 date: "2019-04-20"
+slug: hello-world
 timeToRead: 1
 thumbnail: /images/seattle_shot.jpg
 keywords:

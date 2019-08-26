@@ -4,22 +4,22 @@ import { Link, graphql } from "gatsby";
 
 import Head from "../components/Head";
 import Layout from "../components/Layout";
-import BannerLanding from "../components/BannerLanding";
+import Banner from "../components/Banner";
 
-const Blog = props => {
+const Blog = ({ data }) => {
   const [showArrows, setShowArrows] = useState(false);
-  const getPosts = props.data.allMarkdownRemark.edges;
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
       <Head title="Blog" />
 
-      <BannerLanding title="Blog" subtitle="Check out my latests posts" />
+      <Banner title="Blog" subtitle="Check out my latests posts" />
 
       <div id="main">
         <section id="one">
           <div className="inner">
-            {getPosts.map(({ node }, i) => (
+            {posts.map(({ node }, i) => (
               <Link
                 to={node.fields.slug}
                 className="link blogPost"
@@ -66,20 +66,24 @@ const Blog = props => {
 
 export default Blog;
 
-export const posts = graphql`
-  query GetPosts {
+export const postQuery = graphql`
+  query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          timeToRead
+          id
           fileAbsolutePath
+          excerpt(pruneLength: 150)
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "MMMM Do YYYY")
             description
             thumbnail
+            timeToRead
           }
-          excerpt(pruneLength: 150)
         }
       }
     }

@@ -2,6 +2,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 
+/**
+ * Head
+ * head html tag using helmet to import variable
+ * SEO and metadata items for each page
+ */
 const Head = ({
   title,
   description,

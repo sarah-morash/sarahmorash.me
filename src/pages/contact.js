@@ -2,13 +2,13 @@ import React from "react";
 
 import Head from "../components/Head";
 import Layout from "../components/Layout";
-import BannerLanding from "../components/BannerLanding";
+import Banner from "../components/Banner";
 
-const Contact = props => (
+const Contact = () => (
   <Layout>
     <Head title="Contact" />
 
-    <BannerLanding title="Contact" subtitle="" />
+    <Banner title="Contact" subtitle="" />
 
     <div id="main contact">
       <section className="contact">

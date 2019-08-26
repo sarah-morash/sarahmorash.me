@@ -1,17 +1,10 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Contact */
-
 #contact {
   border-bottom: solid 1px _palette(border);
   overflow-x: hidden;
 
   > .inner {
-    @include vendor('display', 'flex');
+    @include vendor("display", "flex");
     padding: 0 !important;
 
     > :nth-child(2n - 1) {
@@ -38,7 +31,7 @@
 
         &:before {
           border-top: solid 1px _palette(border);
-          content: '';
+          content: "";
           display: block;
           margin-left: -3em;
           position: absolute;

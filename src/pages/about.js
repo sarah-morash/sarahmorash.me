@@ -3,16 +3,16 @@ import { Link } from "gatsby";
 
 import Head from "../components/Head";
 import Layout from "../components/Layout";
-import BannerLanding from "../components/BannerLanding";
+import Banner from "../components/Banner";
 
 import work from "../assets/images/work.jpg";
 import blog from "../assets/images/coffee.jpg";
 
-const About = props => (
+const About = () => (
   <Layout>
     <Head title="About" />
 
-    <BannerLanding title="About Me" />
+    <Banner title="About Me" />
 
     <div id="main">
       <section id="one">

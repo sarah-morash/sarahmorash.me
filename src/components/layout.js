@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Header from "./Nav";
 import Menu from "./Menu";
@@ -6,52 +6,32 @@ import Footer from "./Footer";
 
 import "../assets/scss/main.scss";
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuVisible: false,
-      loading: "is-loading"
+const Layout = ({ children }) => {
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [loading, setLoading] = useState("is-loading");
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLoading("");
+    }, 1000);
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     };
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
-  }
+  }, []);
 
-  componentDidMount() {
-    this.timeoutId = setTimeout(() => {
-      this.setState({ loading: "" });
-    }, 100);
-  }
-
-  componentWillUnmount() {
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
-    }
-  }
-
-  handleToggleMenu() {
-    this.setState({
-      isMenuVisible: !this.state.isMenuVisible
-    });
-  }
-
-  render() {
-    const { children } = this.props;
-
-    return (
-      <div
-        className={`body ${this.state.loading} ${
-          this.state.isMenuVisible ? "is-menu-visible" : ""
-        }`}
-      >
-        <div id="wrapper">
-          <Header onToggleMenu={this.handleToggleMenu} />
-          {children}
-          <Footer />
-        </div>
-        <Menu onToggleMenu={this.handleToggleMenu} />
+  return (
+    <div className={`body ${loading} ${menuVisible ? "is-menu-visible" : ""}`}>
+      <div id="wrapper">
+        <Header onToggleMenu={() => setMenuVisible(!menuVisible)} />
+        {children}
+        <Footer />
       </div>
-    );
-  }
-}
+      <Menu onToggleMenu={() => setMenuVisible(!menuVisible)} />
+    </div>
+  );
+};
 
 export default Layout;

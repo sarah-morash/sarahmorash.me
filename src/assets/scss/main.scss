@@ -1,17 +1,10 @@
-@import "libs/vars";
-@import "libs/functions";
-@import "libs/mixins";
-@import "libs/skel";
+@import "shared/vars";
+@import "shared/functions";
+@import "shared/mixins";
+@import "shared/skel";
 @import "../css/font-awesome.min.css";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
-
 @import "css-grid";
-
-/*
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 @include skel-breakpoints(
   (
@@ -68,13 +61,11 @@
   }
 }
 
-// Base.
+// Shared
+@import "shared/page";
+@import "shared/typography";
 
-@import "base/page";
-@import "base/typography";
-
-// Component.
-
+// Component
 @import "components/section";
 @import "components/form";
 @import "components/box";
@@ -87,13 +78,10 @@
 @import "components/tiles";
 @import "components/contact-method";
 @import "components/spotlights";
-
-// Layout.
-
-@import "layout/header";
-@import "layout/banner";
-@import "layout/main";
-@import "layout/contact";
-@import "layout/footer";
-@import "layout/wrapper";
-@import "layout/menu";
+@import "components/header";
+@import "components/banner";
+@import "components/main";
+@import "components/contact";
+@import "components/footer";
+@import "components/wrapper";
+@import "components/menu";

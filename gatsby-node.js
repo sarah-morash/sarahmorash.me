@@ -1,90 +1,49 @@
 const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
-const createTagPages = (createPage, posts) => {
-  const allTagsIndexTemplate = path.resolve("src/templates/allTagsIndex.js");
-  const singleTagIndexTemplate = path.resolve(
-    "src/templates/singleTagIndex.js"
-  );
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-  const postsByTag = {};
+  const postTemplate = path.resolve(`src/templates/BlogPost.js`);
 
-  posts.forEach(({ node }) => {
-    if (node.frontmatter.tags) {
-      node.frontmatter.tags.forEach(tag => {
-        if (!postsByTag[tag]) {
-          postsByTag[tag] = [];
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
         }
-
-        postsByTag[tag].push(node);
-      });
-    }
-  });
-
-  const tags = Object.keys(postsByTag);
-
-  createPage({
-    path: "/tags",
-    component: allTagsIndexTemplate,
-    context: {
-      tags: tags.sort()
-    }
-  });
-
-  tags.forEach(tagName => {
-    const posts = postsByTag[tagName];
-
-    createPage({
-      path: `/tags/${tagName}`,
-      component: singleTagIndexTemplate,
-      context: {
-        posts,
-        tagName
       }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: postTemplate,
+        context: { slug: node.fields.slug } // additional data can be passed via context
+      });
     });
   });
 };
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve("src/components/BlogPost.js");
-    resolve(
-      graphql(`
-        query {
-          allMarkdownRemark(
-            sort: { order: ASC, fields: [frontmatter___date] }
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  path
-                  title
-                  tags
-                }
-              }
-            }
-          }
-        }
-      `)
-    ).then(result => {
-      const posts = result.data.allMarkdownRemark.edges;
-
-      createTagPages(createPage, posts);
-
-      posts.forEach(({ node }, index) => {
-        const path = node.frontmatter.path;
-        createPage({
-          path,
-          component: blogPostTemplate,
-          context: {
-            pathSlug: path,
-            prev: index === 0 ? null : posts[index - 1].node,
-            next: index === posts.length - 1 ? null : posts[index + 1].node
-          }
-        });
-      });
-      resolve();
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug
     });
-  });
+  }
 };

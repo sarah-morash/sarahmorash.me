@@ -2,7 +2,7 @@ import React from "react";
 
 import Head from "../components/Head";
 import Layout from "../components/Layout";
-import BannerLanding from "../components/BannerLanding";
+import Banner from "../components/Banner";
 import Slide from "../components/Slide";
 
 import redspace from "../assets/images/redspace.png";
@@ -25,11 +25,11 @@ import sql from "../assets/images/sql.png";
 import net from "../assets/images/net.png";
 import resume from "../assets/files/Resume_SarahMorash.pdf";
 
-const Work = props => (
+const Work = () => (
   <Layout>
     <Head title="Work" />
 
-    <BannerLanding title="Work" />
+    <Banner title="Work" />
 
     <div id="main">
       <section id="one">
