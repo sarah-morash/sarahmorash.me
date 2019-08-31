@@ -7,12 +7,19 @@ import rightArrow from "../assets/images/icons/caret-right.svg";
 const Carousel = ({ slides }) => {
   const [slidePosition, setSlidePosition] = useState(0);
   const slide = slides[slidePosition];
+  const max = slides.length - 1;
 
   return (
     <div className="carousel">
-      <button className="left-arrow">
-        <img src={leftArrow} alt="left" />
-      </button>
+      {slidePosition !== 0 && (
+        <button
+          className="left-arrow"
+          onClick={() => setSlidePosition(slidePosition - 1)}
+        >
+          <img src={leftArrow} alt="left" />
+        </button>
+      )}
+
       <div className="slide">
         <Slide
           title={slide.title}
@@ -25,9 +32,14 @@ const Carousel = ({ slides }) => {
           ))}
         </Slide>
       </div>
-      <button className="right-arrow">
-        <img src={rightArrow} alt="right" />
-      </button>
+      {slidePosition !== max && (
+        <button
+          className="right-arrow"
+          onClick={() => setSlidePosition(slidePosition + 1)}
+        >
+          <img src={rightArrow} alt="right" />
+        </button>
+      )}
     </div>
   );
 };
