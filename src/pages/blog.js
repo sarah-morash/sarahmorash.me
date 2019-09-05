@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import classnames from "classnames";
+import dayjs from "dayjs";
 import { Link, graphql } from "gatsby";
 
 import Head from "../components/Head";
 import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
-const Blog = ({ data }) => {
+const Blog = ({ data: { allContentfulBlogPost } }) => {
   const [showArrows, setShowArrows] = useState(false);
-  const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -19,9 +19,9 @@ const Blog = ({ data }) => {
       <div id="main">
         <section id="one">
           <div className="inner">
-            {posts.map(({ node }, i) => (
+            {allContentfulBlogPost.edges.map(({ node }, i) => (
               <Link
-                to={node.fields.slug}
+                to={node}
                 className="link blogPost"
                 key={i}
                 onMouseOver={() => setShowArrows(true)}
@@ -29,18 +29,26 @@ const Blog = ({ data }) => {
               >
                 <div className="post-list">
                   <div className="content">
-                    <img
+                    <div
                       className="image"
-                      src={encodeURI(node.frontmatter.thumbnail)}
-                      alt={node.frontmatter.title}
+                      style={{
+                        backgroundImage:
+                          node.heroImage !== null
+                            ? `url(${encodeURI(node.heroImage.file.url)})`
+                            : ""
+                      }}
+                      alt={node.title}
                     />
                     <div className="innerContent">
-                      <h1 className="title">{node.frontmatter.title}</h1>
-                      <p className="description">
-                        {node.frontmatter.description}
+                      <h1 className="title">{node.title}</h1>
+                      <p className="description">{node.subHeading}</p>
+                      <p className="date">
+                        {node.postedDate &&
+                          dayjs(node.postedDate).format("DD•MM•YY")}
                       </p>
-                      <p className="date">{node.frontmatter.date}</p>
-                      <p className="readTime">{node.timeToRead} min read</p>
+                      <p className="readTime">
+                        {node.timeToRead && `${node.timeToRead} min read`}
+                      </p>
                     </div>
                     <div
                       className={classnames(
@@ -53,8 +61,8 @@ const Blog = ({ data }) => {
                       <span className="arrow-3">></span>
                     </div>
                   </div>
+                  <hr className="separator" />
                 </div>
-                <hr className="separator" />
               </Link>
             ))}
           </div>
@@ -67,23 +75,29 @@ const Blog = ({ data }) => {
 export default Blog;
 
 export const postQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  {
+    allContentfulBlogPost {
       edges {
         node {
           id
-          fileAbsolutePath
-          excerpt(pruneLength: 150)
-          fields {
-            slug
+          title
+          subHeading
+          postedDate
+          heroImage {
+            id
+            file {
+              url
+            }
           }
-          frontmatter {
-            title
-            date(formatString: "MMMM Do YYYY")
-            description
-            thumbnail
-            timeToRead
+          blogContent {
+            id
+            content {
+              content {
+                value
+              }
+            }
           }
+          timeToRead
         }
       }
     }

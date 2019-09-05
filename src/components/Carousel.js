@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Slide from "./Slide";
-
 import leftArrow from "../assets/images/icons/caret-left.svg";
 import rightArrow from "../assets/images/icons/caret-right.svg";
 
@@ -9,15 +8,21 @@ const Carousel = ({ slides }) => {
   const slide = slides[slidePosition];
   const max = slides.length - 1;
 
+  const updateSlide = position => {
+    setSlidePosition(position);
+  };
+
   return (
     <div className="carousel">
-      {slidePosition !== 0 && (
+      {slidePosition !== 0 ? (
         <button
           className="left-arrow"
-          onClick={() => setSlidePosition(slidePosition - 1)}
+          onClick={() => updateSlide(slidePosition - 1)}
         >
           <img src={leftArrow} alt="left" />
         </button>
+      ) : (
+        <div className="arrow-placeholder" />
       )}
 
       <div className="slide">
@@ -27,18 +32,20 @@ const Carousel = ({ slides }) => {
           image={slide.image}
           link={slide.link}
         >
-          {slide.technologies.map(tech => (
-            <img alt={tech.name} src={tech.image} />
+          {slide.technologies.map((tech, index) => (
+            <img alt={tech.name} key={index} src={tech.image} />
           ))}
         </Slide>
       </div>
-      {slidePosition !== max && (
+      {slidePosition !== max ? (
         <button
           className="right-arrow"
-          onClick={() => setSlidePosition(slidePosition + 1)}
+          onClick={() => updateSlide(slidePosition + 1)}
         >
           <img src={rightArrow} alt="right" />
         </button>
+      ) : (
+        <div className="arrow-placeholder" />
       )}
     </div>
   );

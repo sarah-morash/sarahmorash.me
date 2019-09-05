@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.arrow-placeholder {
+  width: 100px;
+  height: 100px;
+}
+
 button {
   &.left-arrow,
   &.right-arrow {
@@ -24,3 +29,12 @@ button {
     }
   }
 }
+
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

@@ -1,5 +1,5 @@
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
+const { path } = require("path");
+// const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -8,15 +8,10 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allContentfulBlogPost {
         edges {
           node {
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
@@ -26,24 +21,25 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
+      console.log(node);
       createPage({
-        path: node.fields.slug,
+        path: `/blog/posts/${node.slug}`,
         component: postTemplate,
-        context: { slug: node.fields.slug } // additional data can be passed via context
+        context: { slug: node.slug } // additional data can be passed via context
       });
     });
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug
-    });
-  }
-};
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions;
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const slug = createFilePath({ node, getNode, basePath: `pages` });
+//     createNodeField({
+//       node,
+//       name: `slug`,
+//       value: slug
+//     });
+//   }
+// };

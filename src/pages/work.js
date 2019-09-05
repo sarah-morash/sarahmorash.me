@@ -38,8 +38,9 @@ const Work = () => (
         </div>
       </section>
       <section id="two">
-        <div className="intro no-border">
-          <h1>Current/Past Projects</h1>
+        <div className="intro work no-border">
+          <h2>Current & Past Projects</h2>
+          <hr className="separator" />
         </div>
         <Carousel slides={projects} />
       </section>

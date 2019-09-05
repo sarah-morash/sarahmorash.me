@@ -5,7 +5,7 @@ import Head from "../components/Head";
 import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
-import work from "../assets/images/work.jpg";
+import work from "../assets/images/setup.jpg";
 import blog from "../assets/images/coffee.jpg";
 
 const About = () => (

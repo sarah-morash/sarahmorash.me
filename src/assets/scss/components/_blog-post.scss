@@ -54,10 +54,28 @@
   a.blogPost {
     border: none;
 
+    .separator {
+      margin: 0 auto;
+      width: 12px;
+
+      &::after {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
     .content {
       display: flex;
       flex-direction: row;
       width: 100%;
+      margin: 16px;
+
+      .image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: auto;
+      }
 
       &:hover {
         color: #00b0c8;
@@ -73,6 +91,7 @@
 
     .title {
       margin: 0;
+      line-height: 1;
     }
 
     .text {
@@ -109,7 +128,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 900;
       transition: display 0.25s ease-in;
       opacity: 1;
