@@ -37,7 +37,7 @@ const Home = () => (
           <header className="major">
             <h3>Work</h3>
             <p>
-              I have been working for over five years in software development.
+              I have been working for over six years in software development.
               Check out my resume and some of my past/current projects.
             </p>
           </header>

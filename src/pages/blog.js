@@ -7,8 +7,9 @@ import Head from "../components/Head";
 import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
-const Blog = ({ data: { allContentfulBlogPost } }) => {
-  const [showArrows, setShowArrows] = useState(false);
+const Blog = ({ data }) => {
+  const blogPosts = data.allContentfulBlogPost.edges;
+  const [showArrows, setShowArrows] = useState(null);
 
   return (
     <Layout>
@@ -19,13 +20,13 @@ const Blog = ({ data: { allContentfulBlogPost } }) => {
       <div id="main">
         <section id="one">
           <div className="inner">
-            {allContentfulBlogPost.edges.map(({ node }, i) => (
+            {blogPosts.map(({ node }, i) => (
               <Link
-                to={node}
+                to={`/blog/posts/${node.slug}`}
                 className="link blogPost"
-                key={i}
-                onMouseOver={() => setShowArrows(true)}
-                onMouseOut={() => setShowArrows(false)}
+                key={node.id}
+                onMouseOver={() => setShowArrows(i)}
+                onMouseOut={() => setShowArrows(null)}
               >
                 <div className="post-list">
                   <div className="content">
@@ -52,7 +53,7 @@ const Blog = ({ data: { allContentfulBlogPost } }) => {
                     </div>
                     <div
                       className={classnames(
-                        showArrows && "showArrows",
+                        showArrows === i && "showArrows",
                         "arrows"
                       )}
                     >
@@ -76,11 +77,12 @@ export default Blog;
 
 export const postQuery = graphql`
   {
-    allContentfulBlogPost {
+    allContentfulBlogPost(limit: 1000) {
       edges {
         node {
           id
           title
+          slug
           subHeading
           postedDate
           heroImage {

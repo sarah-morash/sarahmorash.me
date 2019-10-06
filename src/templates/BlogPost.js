@@ -1,16 +1,17 @@
 import React from "react";
+import { graphql } from "gatsby";
+
 import Layout from "./Layout";
 import Banner from "../components/Banner";
-import { graphql } from "gatsby";
 
 /**
  * BlogPost
  * Creates a blog post from a markdown file
  */
 const BlogPost = ({ data }) => {
-  const { title, date, subHeading, postedDate } = data.allContentfulBlogPost;
-  const heroImage = data.allContentfulBlogPost.heroImage.file.url;
-  const blogContent = data.allContentfulBlogPost.content.content.value;
+  const { title, date, subHeading, postedDate } = data.contentfulBlogPost;
+  const heroImage = data.contentfulBlogPost.heroImage.file.url;
+  const blogContent = data.contentfulBlogPost.content.content.value;
 
   return (
     <Layout>
@@ -31,10 +32,17 @@ const BlogPost = ({ data }) => {
 
 export default BlogPost;
 
-export const query = graphql`
-  query blogQuery($slug: String!) {
-    contentfulBlogPost($slug: { eq: $slug }) {
+export const pageQuery = graphql`
+  query ContentfulBlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    contentfulBlogPost(slug: { eq: $slug }) {
       title
+      slug
       subHeading
       postedDate
       heroImage {

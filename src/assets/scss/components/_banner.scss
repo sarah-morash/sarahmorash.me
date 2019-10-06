@@ -4,26 +4,37 @@
   @include vendor("background-image", 'url("../images/toronto.jpg")');
   @include vendor("display", "flex");
   @include padding(4em, 0, (2em, 0, 0, 0));
-  // background: #00b0c8;
-  // background: linear-gradient(90deg, #00b0c8 0%, #2421b6 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
-  // height: 60vh;
   margin-bottom: -3.25em;
   max-height: 32em;
   min-height: 22em;
   position: relative;
   top: -3.25em;
 
+  .bannerImage {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 0 !important;
+    cursor: default;
+    margin-bottom: -3.25em;
+    max-height: 32em;
+    min-height: 22em;
+    position: relative;
+    top: -3.25em;
+    z-index: 1;
+  }
+
   &:after {
     @include vendor("transition", "opacity #{_duration(banner)} ease");
     @include vendor("transition-delay", "0.75s");
     @include vendor("pointer-events", "none");
-    // background-color: _palette(bg);
     content: "";
     display: block;
     height: 100%;
@@ -73,6 +84,7 @@
       @include vendor("display", "flex");
       @include vendor("align-items", "center");
       margin: 0 0 _size(element-margin) 0;
+      z-index: 10;
 
       > * {
         margin-left: 1.5em;
@@ -94,13 +106,16 @@
         width: 100%;
 
         .typedInput {
-          background: none;
+          border-radius: 12px;
+          background: rgba(0, 0, 0, 0.7);
           border: none;
+          padding-left: 50px;
+          color: #111344;
           font-size: 1em;
-          width: 100%;
+          font-family: "Shadows", Helvetica, sans-serif;
+          width: 400px;
           font-weight: _font(weight-bold);
           letter-spacing: _font(letter-spacing-alt);
-          text-transform: uppercase;
 
           &:focus {
             border: none;
@@ -116,9 +131,6 @@
     min-height: 0;
     max-height: none;
     min-height: 400px;
-    // height: 75vh;
-    // min-height: 30em;
-    // max-height: 50em;
 
     &.alt {
       opacity: 0.75;
@@ -139,10 +151,6 @@
       );
     }
   }
-  // &.style3 { &:after { background-color: _palette(accent3); } }
-  // &.style4 { &:after { background-color: _palette(accent4); } }
-  // &.style5 { &:after { background-color: _palette(accent5); } }
-  // &.style6 { &:after { background-color: _palette(accent6); } }
 
   .body.is-loading & {
     &:after {

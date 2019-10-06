@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Slide from "./Slide";
 import leftArrow from "../assets/images/icons/caret-left.svg";
 import rightArrow from "../assets/images/icons/caret-right.svg";

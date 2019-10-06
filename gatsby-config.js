@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
     title: "Sarah Morash",
@@ -25,6 +27,13 @@ module.exports = {
       options: {
         name: "posts",
         path: `${__dirname}/src/pages/blog/posts`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images`
       }
     },
     {

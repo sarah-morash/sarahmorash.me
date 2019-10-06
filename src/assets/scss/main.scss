@@ -3,7 +3,6 @@
 @import "shared/mixins";
 @import "shared/skel";
 @import "../css/font-awesome.min.css";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 @import "css-grid";
 
 @include skel-breakpoints(
@@ -50,13 +49,9 @@
     }
 
     img {
-      // display: inline;
       margin-left: auto;
-      width: 40%;
+      width: 100%;
       height: 100%;
-      max-width: 310px;
-      margin-top: auto;
-      margin-bottom: auto;
     }
   }
 }
@@ -87,3 +82,4 @@
 @import "components/footer";
 @import "components/wrapper";
 @import "components/menu";
+@import "components/about";
