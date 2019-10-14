@@ -4,11 +4,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @include breakpoint(small) {
+    width: 90%;
+    flex-direction: column;
+  }
 }
 
 .arrow-placeholder {
   width: 100px;
   height: 100px;
+
+  @include breakpoint(small) {
+    display: none;
+  }
 }
 
 button {
@@ -18,6 +27,7 @@ button {
     box-shadow: none;
     width: 100px;
     height: 100px;
+    position: relative;
 
     img {
       width: 100px;
@@ -26,6 +36,22 @@ button {
 
     &:hover {
       box-shadow: none;
+    }
+
+    @include breakpoint(small) {
+      position: absolute;
+    }
+  }
+
+  &.left-arrow {
+    @include breakpoint(small) {
+      left: 25px;
+    }
+  }
+
+  &.right-arrow {
+    @include breakpoint(small) {
+      right: 25px;
     }
   }
 }

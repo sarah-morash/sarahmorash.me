@@ -9,19 +9,20 @@ const Slide = ({ image, title, text, children, link }) => {
       transitionName="fade"
     >
       <article>
-        <h3>{title}</h3>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href={link}
           className="link primary"
         >
-          <div
-            className="slideImg"
-            style={{ backgroundImage: `url(${image})` }}
-            alt={title}
-          />
+          <h3>{title}</h3>
         </a>
+
+        <div
+          className="slideImg"
+          style={{ backgroundImage: `url(${image})` }}
+          alt={title}
+        />
         <div className="icons">{children}</div>
         <div className="description">{text}</div>
       </article>

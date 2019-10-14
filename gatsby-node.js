@@ -1,41 +1,49 @@
-const { path } = require("path");
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve(`./src/templates/BlogPost.js`);
+
+  const postTemplate = path.resolve(`src/templates/BlogPost.js`);
 
   return graphql(`
     {
-      allContentfulPost {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
-            slug
-            title
+            fields {
+              slug
+            }
           }
         }
       }
     }
-  `)
-    .then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
 
-      const posts = result.data.allContenfulPost.edges;
-
-      posts.forEach((post, index) => {
-        const previous =
-          index === posts.length - 1 ? null : posts[index + 1].node;
-        const next = index === posts.length + 1 ? null : posts[index - 1].node;
-
-        createPage({
-          path: `/blog/posts/${post.node.slug}`,
-          component: postTemplate,
-          context: { slug: post.node.slug, previous, next }
-        });
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: postTemplate,
+        context: { slug: node.fields.slug }
       });
-    })
-    .catch(error => {
-      console.log("Error retrieving contentful data", error);
     });
+  });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "pages" });
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug
+    });
+  }
 };

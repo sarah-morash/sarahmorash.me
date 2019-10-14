@@ -48,13 +48,6 @@ module.exports = {
         cookieDomain: "sarahmorash.me"
       }
     },
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId: "eq9i4a4mfsbm",
-        accessToken: "7okg8wCHU0-R-DA2YFJCBAEC55IRXt4tjvQhtklL3P8"
-      }
-    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sass",

@@ -1,13 +1,22 @@
 #wrapper {
   section.blogPost {
     .inner {
+      flex-direction: row;
+
+      @include breakpoint(small) {
+        flex-direction: column;
+      }
+
       img.image {
         max-width: 100% !important;
         max-height: 100% !important;
-        height: auto;
-        width: auto;
-        margin: 0 auto 0;
-        margin-bottom: 50px;
+        width: 30%;
+        margin: 0 0 50px;
+
+        @include breakpoint(small) {
+          margin: 0 auto 50px;
+          width: 90%;
+        }
       }
     }
 
@@ -17,6 +26,13 @@
       letter-spacing: 0.25em;
       margin-bottom: 0;
       text-transform: uppercase;
+      width: 60%;
+      margin: 0 40px;
+
+      @include breakpoint(small) {
+        margin: 0 auto;
+        width: 90%;
+      }
     }
 
     .date,
@@ -26,6 +42,14 @@
       letter-spacing: 0.25em;
       margin-bottom: 0;
       text-transform: uppercase;
+    }
+
+    .date {
+      padding: 0 4em;
+
+      @include breakpoint(small) {
+        padding: 0 auto;
+      }
     }
   }
 }
@@ -73,8 +97,13 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        width: 200px;
-        height: auto;
+        width: 250px;
+        height: 200px;
+
+        @include breakpoint(small) {
+          width: 150px;
+          height: 100px;
+        }
       }
 
       &:hover {

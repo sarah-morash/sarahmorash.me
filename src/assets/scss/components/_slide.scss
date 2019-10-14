@@ -25,6 +25,10 @@
       font-weight: 100;
       text-shadow: 3px 3px rgba(0, 176, 200, 0.8);
       margin: 0;
+
+      @include breakpoint(small) {
+        font-size: 36px;
+      }
     }
 
     a {
@@ -35,9 +39,6 @@
 
     .description {
       font-size: 24px;
-      // text-shadow: 3px 3px rgba(0, 176, 200, 0.8);
-      // text-transform: uppercase;
-
       text-shadow: 1px 0px rgba(255, 255, 255, 1);
       text-transform: uppercase;
       color: rgba(0, 0, 0, 0.1);

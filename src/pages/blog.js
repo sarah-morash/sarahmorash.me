@@ -8,7 +8,7 @@ import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
 const Blog = ({ data }) => {
-  const blogPosts = data.allContentfulBlogPost.edges;
+  const blogPosts = data.allMarkdownRemark.edges;
   const [showArrows, setShowArrows] = useState(null);
 
   return (
@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
           <div className="inner">
             {blogPosts.map(({ node }, i) => (
               <Link
-                to={`/blog/posts/${node.slug}`}
+                to={node.fields.slug}
                 className="link blogPost"
                 key={node.id}
                 onMouseOver={() => setShowArrows(i)}
@@ -34,14 +34,14 @@ const Blog = ({ data }) => {
                       className="image"
                       style={{
                         backgroundImage:
-                          node.heroImage !== null
-                            ? `url(${encodeURI(node.heroImage.file.url)})`
+                          node.featureImage !== null
+                            ? `url(${encodeURI(node.frontmatter.featureImage)})`
                             : ""
                       }}
                       alt={node.title}
                     />
                     <div className="innerContent">
-                      <h1 className="title">{node.title}</h1>
+                      <h1 className="title">{node.frontmatter.title}</h1>
                       <p className="description">{node.subHeading}</p>
                       <p className="date">
                         {node.postedDate &&
@@ -74,32 +74,26 @@ const Blog = ({ data }) => {
 };
 
 export default Blog;
-
 export const postQuery = graphql`
-  {
-    allContentfulBlogPost(limit: 1000) {
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
-          title
-          slug
-          subHeading
-          postedDate
-          heroImage {
-            id
-            file {
-              url
-            }
+          fileAbsolutePath
+          excerpt(pruneLength: 150)
+          fields {
+            slug
           }
-          blogContent {
-            id
-            content {
-              content {
-                value
-              }
-            }
+          frontmatter {
+            title
+            date(formatString: "MMMM Do YYYY")
+            subHeading
+            thumbnail
+            featureImage
+            timeToRead
+            keywords
           }
-          timeToRead
         }
       }
     }
