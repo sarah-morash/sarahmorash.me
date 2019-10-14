@@ -1,13 +1,22 @@
 #wrapper {
   section.blogPost {
     .inner {
+      flex-direction: row;
+
+      @include breakpoint(small) {
+        flex-direction: column;
+      }
+
       img.image {
         max-width: 100% !important;
         max-height: 100% !important;
-        height: auto;
-        width: auto;
-        margin: 0 auto 0;
-        margin-bottom: 50px;
+        width: 30%;
+        margin: 0 0 50px;
+
+        @include breakpoint(small) {
+          margin: 0 auto 50px;
+          width: 90%;
+        }
       }
     }
 
@@ -17,6 +26,13 @@
       letter-spacing: 0.25em;
       margin-bottom: 0;
       text-transform: uppercase;
+      width: 60%;
+      margin: 0 40px;
+
+      @include breakpoint(small) {
+        margin: 0 auto;
+        width: 90%;
+      }
     }
 
     .date,
@@ -26,6 +42,14 @@
       letter-spacing: 0.25em;
       margin-bottom: 0;
       text-transform: uppercase;
+    }
+
+    .date {
+      padding: 0 4em;
+
+      @include breakpoint(small) {
+        padding: 0 auto;
+      }
     }
   }
 }
@@ -54,10 +78,33 @@
   a.blogPost {
     border: none;
 
+    .separator {
+      margin: 0 auto;
+      width: 12px;
+
+      &::after {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
     .content {
       display: flex;
       flex-direction: row;
       width: 100%;
+      margin: 16px;
+
+      .image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 250px;
+        height: 200px;
+
+        @include breakpoint(small) {
+          width: 150px;
+          height: 100px;
+        }
+      }
 
       &:hover {
         color: #00b0c8;
@@ -73,6 +120,7 @@
 
     .title {
       margin: 0;
+      line-height: 1;
     }
 
     .text {
@@ -104,31 +152,36 @@
     }
 
     .arrows {
-      display: none;
+      display: flex;
       font-family: "Fira Code";
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 900;
       transition: display 0.25s ease-in;
       opacity: 1;
+      line-height: 0.5;
       color: #fff;
 
-      .arrow-1 {
-        opacity: 0.2;
-      }
-
-      .arrow-2 {
-        opacity: 0.5;
-      }
-
+      .arrow-1,
+      .arrow-2,
       .arrow-3 {
-        opacity: 0.8;
+        opacity: 0;
       }
 
       &.showArrows {
-        display: flex;
+        .arrow-1 {
+          opacity: 0.2;
+        }
+
+        .arrow-2 {
+          opacity: 0.5;
+        }
+
+        .arrow-3 {
+          opacity: 0.8;
+        }
       }
     }
   }

@@ -5,9 +5,9 @@ $misc: (
 
 // Duration.
 $duration: (
-  menu: 0.35s,
-  transition: 0.2s,
-  banner: 2.5s
+  menu: 0.3s,
+  transition: 0.25s,
+  banner: 0.2s
 );
 
 // Size.
@@ -21,12 +21,12 @@ $size: (
 // Font.
 $font: (
   family: (
-    "Source Sans Pro",
+    Poppins,
     Helvetica,
     sans-serif
   ),
   family-fixed: (
-    "Fira Code",
+    Shadows,
     monospace
   ),
   weight: 300,

@@ -1,30 +1,31 @@
 import React from "react";
+import { graphql } from "gatsby";
+
 import Layout from "./Layout";
 import Banner from "../components/Banner";
-import { graphql } from "gatsby";
 
 /**
  * BlogPost
  * Creates a blog post from a markdown file
  */
 const BlogPost = ({ data }) => {
-  const {
-    title,
-    description,
-    thumbnail,
-    date
-  } = data.markdownRemark.frontmatter;
-  const { html } = data.markdownRemark;
+  console.log(data);
+  const { title, date, subHeading } = data.markdownRemark.frontmatter;
+  const heroImage = data.markdownRemark.frontmatter.featureImage;
+  const blogContent = data.markdownRemark.html;
 
   return (
     <Layout>
-      <Banner title={title} subtitle={description} />
+      <Banner title={title} subtitle={subHeading} />
       <section className="blogPost">
         <div className="inner">
-          <img className="image" src={encodeURI(thumbnail)} alt={title} />
-          <div className="text" dangerouslySetInnerHTML={{ __html: html }} />
-          <span className="date">{date}</span>
+          <img className="image" src={heroImage} alt={title} />
+          <div
+            className="text"
+            dangerouslySetInnerHTML={{ __html: blogContent }}
+          />
         </div>
+        <span className="date">{date}</span>
       </section>
     </Layout>
   );
@@ -40,9 +41,11 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do YYYY")
-        description
+        subHeading
+        featureImage
         thumbnail
         timeToRead
+        keywords
       }
     }
   }

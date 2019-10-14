@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classnames from "classnames";
+import dayjs from "dayjs";
 import { Link, graphql } from "gatsby";
 
 import Head from "../components/Head";
@@ -7,8 +8,8 @@ import Layout from "../templates/Layout";
 import Banner from "../components/Banner";
 
 const Blog = ({ data }) => {
-  const [showArrows, setShowArrows] = useState(false);
-  const posts = data.allMarkdownRemark.edges;
+  const blogPosts = data.allMarkdownRemark.edges;
+  const [showArrows, setShowArrows] = useState(null);
 
   return (
     <Layout>
@@ -19,32 +20,40 @@ const Blog = ({ data }) => {
       <div id="main">
         <section id="one">
           <div className="inner">
-            {posts.map(({ node }, i) => (
+            {blogPosts.map(({ node }, i) => (
               <Link
                 to={node.fields.slug}
                 className="link blogPost"
-                key={i}
-                onMouseOver={() => setShowArrows(true)}
-                onMouseOut={() => setShowArrows(false)}
+                key={node.id}
+                onMouseOver={() => setShowArrows(i)}
+                onMouseOut={() => setShowArrows(null)}
               >
                 <div className="post-list">
                   <div className="content">
-                    <img
+                    <div
                       className="image"
-                      src={encodeURI(node.frontmatter.thumbnail)}
-                      alt={node.frontmatter.title}
+                      style={{
+                        backgroundImage:
+                          node.featureImage !== null
+                            ? `url(${encodeURI(node.frontmatter.featureImage)})`
+                            : ""
+                      }}
+                      alt={node.title}
                     />
                     <div className="innerContent">
                       <h1 className="title">{node.frontmatter.title}</h1>
-                      <p className="description">
-                        {node.frontmatter.description}
+                      <p className="description">{node.subHeading}</p>
+                      <p className="date">
+                        {node.postedDate &&
+                          dayjs(node.postedDate).format("DD•MM•YY")}
                       </p>
-                      <p className="date">{node.frontmatter.date}</p>
-                      <p className="readTime">{node.timeToRead} min read</p>
+                      <p className="readTime">
+                        {node.timeToRead && `${node.timeToRead} min read`}
+                      </p>
                     </div>
                     <div
                       className={classnames(
-                        showArrows && "showArrows",
+                        showArrows === i && "showArrows",
                         "arrows"
                       )}
                     >
@@ -53,8 +62,8 @@ const Blog = ({ data }) => {
                       <span className="arrow-3">></span>
                     </div>
                   </div>
+                  <hr className="separator" />
                 </div>
-                <hr className="separator" />
               </Link>
             ))}
           </div>
@@ -65,7 +74,6 @@ const Blog = ({ data }) => {
 };
 
 export default Blog;
-
 export const postQuery = graphql`
   query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -80,9 +88,11 @@ export const postQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM Do YYYY")
-            description
+            subHeading
             thumbnail
+            featureImage
             timeToRead
+            keywords
           }
         }
       }

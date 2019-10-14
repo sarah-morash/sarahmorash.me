@@ -30,7 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.fields.slug,
         component: postTemplate,
-        context: { slug: node.fields.slug } // additional data can be passed via context
+        context: { slug: node.fields.slug }
       });
     });
   });
@@ -38,11 +38,11 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "pages" });
     createNodeField({
       node,
-      name: `slug`,
+      name: "slug",
       value: slug
     });
   }

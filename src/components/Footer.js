@@ -1,4 +1,5 @@
 import React from "react";
+
 import initials from "../assets/images/website-icon.png";
 
 /**
@@ -47,6 +48,16 @@ const Footer = () => (
             className="icon alt fa-github"
           >
             <span className="label">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://teespring.com/stores/smorewear"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon alt fa-teespring"
+          >
+            <span className="label">teespring</span>
           </a>
         </li>
       </ul>

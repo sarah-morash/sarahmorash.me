@@ -2,21 +2,23 @@
 
 ol {
   list-style: decimal;
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0;
   padding-left: 1.25em;
 
   li {
-    padding-left: 0.25em;
+    padding-left: 1em;
+    margin: 0.5em 0;
   }
 }
 
 ul {
   list-style: disc;
-  margin: 0 0 _size(element-margin) 0;
+  margin: 0.25em 0;
   padding-left: 1em;
 
   li {
     padding-left: 0.5em;
+    margin: 0.1em 0;
   }
 
   &.alt {
