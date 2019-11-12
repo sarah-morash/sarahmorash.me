@@ -23,6 +23,21 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-141718999-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "sarahmorash.me"
+      }
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-remark",
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
@@ -36,22 +51,20 @@ module.exports = {
         path: `${__dirname}/src/assets/images`
       }
     },
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-141718999-1",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "sarahmorash.me"
-      }
-    },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 1200
+    //         }
+    //       }
+    //     ]
+    //   }
+    // },
     "gatsby-plugin-sass",
-    "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
     "gatsby-plugin-netlify"

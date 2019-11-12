@@ -3,8 +3,6 @@ title: "My Fitness Journey"
 subHeading: ""
 date: "2019-05-24"
 timeToRead: 2
-thumbnail: /images/gym.jpg
-featureImage: /images/gym.jpg
 keywords: ["fitness"]
 ---
 
