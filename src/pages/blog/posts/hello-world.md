@@ -4,7 +4,7 @@ subHeading: "Baby's first blog post."
 date: "2019-04-20"
 timeToRead: 1
 slug: hello-world
-featuredImage: ./images/blog/hello-world/seattle_shot.jpg
+featureImage: ./images/blog/hello-world/seattle_shot.jpg
 keywords: ["welcome"]
 ---
 

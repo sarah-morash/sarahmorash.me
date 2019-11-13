@@ -4,7 +4,7 @@ subHeading: "How to downsize on clothes to upsize on your life."
 date: "2019-10-12"
 timeToRead: 3
 slug: cleaning-clothes
-featuredImage: ./images/blog/fall-unhaul/bags.jpg
+featureImage: ./images/blog/fall-unhaul/bags.jpg
 keywords: ["fashion", "budget", "adulting"]
 ---
 

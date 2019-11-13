@@ -11,7 +11,6 @@ import Banner from "../components/Banner";
 const Blog = ({ data }) => {
   const blogPosts = data.allMarkdownRemark.edges;
   const [showArrows, setShowArrows] = useState(null);
-  let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
 
   return (
     <Layout>
@@ -35,7 +34,7 @@ const Blog = ({ data }) => {
                     <Img
                       className="image"
                       alt={node.title}
-                      fluid={node.featuredImage.childImageSharp.fluid}
+                      fluid={node.featureImage.childImageSharp.fluid}
                     />
                     <div className="innerContent">
                       <h1 className="title">{node.frontmatter.title}</h1>
@@ -85,7 +84,7 @@ export const postQuery = graphql`
             title
             date(formatString: "MMMM Do YYYY")
             subHeading
-            featuredImage {
+            featureImage {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid

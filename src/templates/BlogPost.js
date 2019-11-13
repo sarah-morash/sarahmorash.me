@@ -12,8 +12,8 @@ import Banner from "../components/Banner";
 const BlogPost = ({ data }) => {
   console.log(data);
   const { title, date, subHeading } = data.markdownRemark.frontmatter;
-  const featuredImage =
-    data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
+  const featureImage =
+    data.markdownRemark.frontmatter.featureImage.childImageSharp.fluid;
   const blogContent = data.markdownRemark.html;
 
   return (
@@ -21,7 +21,7 @@ const BlogPost = ({ data }) => {
       <Banner title={title} subtitle={subHeading} />
       <section className="blogPost">
         <div className="inner">
-          <Img className="image" alt={title} fluid={featuredImage} />
+          <Img className="image" alt={title} fluid={featureImage} />
           <div
             className="text"
             dangerouslySetInnerHTML={{ __html: blogContent }}
@@ -44,7 +44,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do YYYY")
         subHeading
-        featuredImage {
+        featureImage {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
