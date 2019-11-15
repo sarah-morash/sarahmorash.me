@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import Layout from "./Layout";
 import Banner from "../components/Banner";
@@ -11,7 +12,8 @@ import Banner from "../components/Banner";
 const BlogPost = ({ data }) => {
   console.log(data);
   const { title, date, subHeading } = data.markdownRemark.frontmatter;
-  const heroImage = data.markdownRemark.frontmatter.featureImage;
+  const featureImage =
+    data.markdownRemark.frontmatter.featureImage.childImageSharp.fluid;
   const blogContent = data.markdownRemark.html;
 
   return (
@@ -19,7 +21,7 @@ const BlogPost = ({ data }) => {
       <Banner title={title} subtitle={subHeading} />
       <section className="blogPost">
         <div className="inner">
-          <img className="image" src={heroImage} alt={title} />
+          <Img className="image" alt={title} fluid={featureImage} />
           <div
             className="text"
             dangerouslySetInnerHTML={{ __html: blogContent }}
@@ -42,8 +44,13 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do YYYY")
         subHeading
-        featureImage
-        thumbnail
+        featureImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         timeToRead
         keywords
       }

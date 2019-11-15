@@ -4,12 +4,11 @@ subHeading: "Baby's first blog post."
 date: "2019-04-20"
 timeToRead: 1
 slug: hello-world
-thumbnail: /images/seattle_shot.jpg
-featureImage: /images/seattle_shot.jpg
+featureImage: "../../../assets/images/blog/hello-world/seattle_shot.jpeg"
 keywords: ["welcome"]
 ---
 
-Welcome to my blog! You should expect to see posts related to:
+Welcome to my blog! Here you can find posts related to:
 
 - Coding and tech
 - Health and fitness

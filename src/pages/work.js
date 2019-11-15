@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Head from "../components/Head";
 import Layout from "../templates/Layout";
@@ -7,6 +8,8 @@ import Carousel from "../components/Carousel";
 
 import projects from "../assets/files/projects";
 import resume from "../assets/files/Resume_SarahMorash.pdf";
+import dalPres from "../assets/images/dal_presentation.png";
+import dalPresPdf from "../assets/files/Tips_from_a_Dal_CS_Grad.pdf";
 
 const Work = () => (
   <Layout>
@@ -43,6 +46,32 @@ const Work = () => (
           <hr className="separator" />
         </div>
         <Carousel slides={projects} />
+      </section>
+      <section id="three">
+        <div className="inner">
+          <div className="intro work no-border">
+            <h2>Presentations & Talks</h2>
+            <hr className="separator" />
+          </div>
+          <section id="two" className="tiles">
+            <article
+              style={{
+                backgroundImage: `url(${dalPres})`
+              }}
+            >
+              <header className="major">
+                <h3>Tips from a Dal CS Alum</h3>
+                <p>
+                  This is a talk I delivered to university students in the
+                  Dalhousie Computer Science program on how to make the most out
+                  of their time in university based on my experiences.
+                </p>
+              </header>
+
+              <a href={dalPresPdf} className="link primary" target="_blank" />
+            </article>
+          </section>
+        </div>
       </section>
     </div>
   </Layout>

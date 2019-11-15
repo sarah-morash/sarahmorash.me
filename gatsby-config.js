@@ -10,6 +10,8 @@ module.exports = {
     "MarkdownRemark.fields.posts": "MarkdownRemark"
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -20,6 +22,18 @@ module.exports = {
         theme_color: "#663399",
         display: "standalone",
         icon: "src/assets/images/website-icon.png"
+      }
+    },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-141718999-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "sarahmorash.me"
       }
     },
     {
@@ -37,21 +51,35 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: `gatsby-transformer-remark`,
       options: {
-        trackingId: "UA-141718999-1",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "sarahmorash.me"
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590
+            }
+          }
+        ]
       }
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 1200
+    //         }
+    //       }
+    //     ]
+    //   }
+    // },
     "gatsby-plugin-sass",
-    "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
     "gatsby-plugin-netlify"
