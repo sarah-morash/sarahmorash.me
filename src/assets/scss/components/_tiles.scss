@@ -5,6 +5,8 @@
   @include vendor("flex-wrap", "wrap");
   border-top: 0 !important;
   margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 
   & + * {
     border-top: 0 !important;

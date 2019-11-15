@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import dayjs from "dayjs";
 import { Link, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import Head from "../components/Head";
 import Layout from "../templates/Layout";
@@ -30,22 +31,18 @@ const Blog = ({ data }) => {
               >
                 <div className="post-list">
                   <div className="content">
-                    <div
+                    <Img
                       className="image"
-                      style={{
-                        backgroundImage:
-                          node.featureImage !== null
-                            ? `url(${encodeURI(node.frontmatter.featureImage)})`
-                            : ""
-                      }}
                       alt={node.title}
+                      fluid={
+                        node.frontmatter.featureImage.childImageSharp.fluid
+                      }
                     />
                     <div className="innerContent">
                       <h1 className="title">{node.frontmatter.title}</h1>
                       <p className="description">{node.subHeading}</p>
                       <p className="date">
-                        {node.postedDate &&
-                          dayjs(node.postedDate).format("DD•MM•YY")}
+                        {node.date && dayjs(node.date).format("DD•MM•YY")}
                       </p>
                       <p className="readTime">
                         {node.timeToRead && `${node.timeToRead} min read`}
@@ -89,8 +86,13 @@ export const postQuery = graphql`
             title
             date(formatString: "MMMM Do YYYY")
             subHeading
-            thumbnail
-            featureImage
+            featureImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             timeToRead
             keywords
           }
