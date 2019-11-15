@@ -10,6 +10,8 @@ module.exports = {
     "MarkdownRemark.fields.posts": "MarkdownRemark"
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -34,9 +36,6 @@ module.exports = {
         cookieDomain: "sarahmorash.me"
       }
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -49,6 +48,22 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/assets/images`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590
+            }
+          }
+        ]
       }
     },
     // {

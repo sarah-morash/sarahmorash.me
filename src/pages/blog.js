@@ -34,7 +34,9 @@ const Blog = ({ data }) => {
                     <Img
                       className="image"
                       alt={node.title}
-                      fluid={node.featureImage.childImageSharp.fluid}
+                      fluid={
+                        node.frontmatter.featureImage.childImageSharp.fluid
+                      }
                     />
                     <div className="innerContent">
                       <h1 className="title">{node.frontmatter.title}</h1>
