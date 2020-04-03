@@ -10,15 +10,15 @@ textarea {
   line-height: 1.65;
 
   @include breakpoint(xlarge) {
-    font-size: 14pt;
+    font-size: 1em;
   }
 
   @include breakpoint(large) {
-    font-size: 12pt;
+    font-size: 1em;
   }
 
   @include breakpoint(xxsmall) {
-    font-size: 11pt;
+    font-size: 1em;
   }
 }
 
@@ -93,35 +93,35 @@ h4 {
 }
 
 h5 {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 h6 {
-  font-size: 0.7em;
+  font-size: 1em;
 }
 
 @include breakpoint(small) {
   h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   h3 {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 }
 
 sub {
-  font-size: 0.8em;
+  font-size: 1.2em;
   position: relative;
   top: 0.5em;
 }
 
 sup {
-  font-size: 0.8em;
+  font-size: 1.2em;
   position: relative;
   top: -0.5em;
 }
@@ -136,7 +136,7 @@ blockquote {
 
 code {
   font-family: _font(family-fixed);
-  font-size: 0.9em;
+  font-size: 1em;
   margin: 0 0.25em;
   padding: 0.25em 0.65em;
   border: 2px solid #676888;
@@ -147,7 +147,7 @@ code {
 pre {
   -webkit-overflow-scrolling: touch;
   font-family: _font(family-fixed);
-  font-size: 0.9em;
+  font-size: 1em;
   margin: 0 0 _size(element-margin) 0;
 
   code {
@@ -212,6 +212,20 @@ hr {
   font-family: "Shadows";
   src: url("../fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf")
     format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ostrich Sans";
+  src: url("../fonts/OstrichSans-Medium.otf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Whisper A Dream";
+  src: url("../fonts/WhisperADream.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
