@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from "./header";
+import Footer from "./Footer";
 
-import "./layout.css"
+import "./layout.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -27,16 +27,16 @@ const Layout = ({ children }) => {
         <Footer></Footer>
       </DIV>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
 
 const DIV = styled.div`
   margin: 0 auto;
   max-width: 1440px;
-`
+`;
