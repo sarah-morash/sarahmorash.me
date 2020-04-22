@@ -6,6 +6,9 @@ import styled from "styled-components";
 import Header from "./header";
 import Footer from "./Footer";
 
+import "../css/all.min.css";
+import "../css/main.css";
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
