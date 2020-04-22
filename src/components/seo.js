@@ -9,8 +9,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import fontAwesome from "../css/all.min.css";
-import main from "../css/main.css";
+
+import "../css/all.min.css";
+import "../css/main.css";
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -70,16 +71,6 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription
         }
       ].concat(meta)}
-      link={[
-        {
-          rel: "stylesheet",
-          href: `${fontAwesome}`
-        },
-        {
-          rel: "stylesheet",
-          href: `${main}`
-        }
-      ]}
     />
   );
 }
