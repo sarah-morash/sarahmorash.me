@@ -1,80 +1,68 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import styled from "styled-components"
 
-import Head from "../components/Head";
-import Layout from "../templates/Layout";
-import Banner from "../components/Banner";
-import Carousel from "../components/Carousel";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import TileList from "../components/tilelist"
+import { projects } from "../files/projects"
 
-import projects from "../assets/files/projects";
-import resume from "../assets/files/Resume_SarahMorash.pdf";
-import dalPres from "../assets/images/dal_presentation.png";
-import dalPresPdf from "../assets/files/Tips_from_a_Dal_CS_Grad.pdf";
+import work from "../images/work/work.jpg"
 
-const Work = () => (
-  <Layout>
-    <Head title="Work" />
+const Work = () => {
+  return (
+    <Layout>
+      <SEO title="Work" />
+      <HERO src={work} alt="work" />
+      <TITLE>
+        <H2>Examples of my work</H2>
+        <SPAN className="fas fa-laptop-code" />
+      </TITLE>
+      <DIV>
+        <TileList list={projects} />
+      </DIV>
+      {/* <TITLE>
+        <H2>Some of my projects</H2>
+        <SPAN className="fas fa-laptop-code" />
+      </TITLE> */}
+    </Layout>
+  )
+}
 
-    <Banner title="Work" />
+export default Work
 
-    <div id="main">
-      <section id="one">
-        <div className="inner">
-          <blockquote>
-            Great companies don’t hire skilled people and motivate them, they
-            hire already motivated people and inspire them. People are either
-            motivated or they are not. Unless you give motivated people
-            something to believe in, something bigger than their job to work
-            toward, they will motivate themselves to find a new job and you’ll
-            be stuck with whoever’s left.
-            <br />
-            <br />- Simon Sinek
-          </blockquote>
-          <p>
-            I am a motivated individual who is constantly looking to better
-            herself and learn more. I love to share what I've learned and help
-            others!
-          </p>
-          <a className="button" href={resume}>
-            Download my resume
-          </a>
-        </div>
-      </section>
-      <section id="two">
-        <div className="intro work no-border">
-          <h2>Current & Past Projects</h2>
-          <hr className="separator" />
-        </div>
-        <Carousel slides={projects} />
-      </section>
-      <section id="three">
-        <div className="inner">
-          <div className="intro work no-border">
-            <h2>Presentations & Talks</h2>
-            <hr className="separator" />
-          </div>
-          <section id="two" className="tiles">
-            <article
-              style={{
-                backgroundImage: `url(${dalPres})`
-              }}
-            >
-              <header className="major">
-                <h3>Tips from a Dal CS Alum</h3>
-                <p>
-                  This is a talk I delivered to university students in the
-                  Dalhousie Computer Science program on how to make the most out
-                  of their time in university based on my experiences.
-                </p>
-              </header>
+const DIV = styled.div`
+  margin-bottom: 150px;
+  ${"" /* margin-bottom: 150px; */}
+`
 
-              <a href={dalPresPdf} className="link primary" target="_blank" />
-            </article>
-          </section>
-        </div>
-      </section>
-    </div>
-  </Layout>
-);
+const TITLE = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
-export default Work;
+const H2 = styled.h1`
+  font-family: "Hipster", cursive;
+  color: #fff;
+  font-size: 54px;
+  filter: drop-shadow(1px 1px 2px #000);
+  margin: 0;
+  padding: 0 16px;
+`
+
+const SPAN = styled.span`
+  font-size: 32px;
+  color: #563bce;
+  opacity: 0.5;
+`
+
+const HERO = styled.div`
+  background-image: url(${work});
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 32px;
+`
