@@ -1,135 +1,236 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from "react"
+import styled from "styled-components"
 
-import Head from "../components/Head";
-import Layout from "../templates/Layout";
-import Banner from "../components/Banner";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-import work from "../assets/images/setup.jpg";
-import blog from "../assets/images/coffee.jpg";
+import wits from "../images/about/wits.jpg"
+import grad from "../images/about/grad.jpg"
+import clc from "../images/about/clc.jpg"
+import collage from "../images/about/collage.jpg"
+import me from "../images/about/animate-me.png"
 
-const About = ({ data }) => {
-  console.log(data);
+const About = () => (
+  <Layout>
+    <SEO title="About" />
+    <HERO src={collage} alt="collage" />
+    <Intro>
+      <CIRCLE src={me} alt="me" />
+      <P>
+        Hey, my name is Sarah Morash and I have been a software developer for
+        over 6 years now. I have been fortunate to work for companies such
+        as&nbsp;
+        <A href="https://www.t4g.com/" target="_blank">
+          T4G
+        </A>
+        ,&nbsp;
+        <A href="https://www.harbr.com/" target="_blank">
+          Harbr
+        </A>
+        , & currently&nbsp;
+        <A href="https://www.redspace.com/" target="_blank">
+          REDspace
+        </A>
+        . I started as a backend CMS developer primarily working with Sitecore,
+        but I've switched gears to my true passion of frontend development.
+      </P>
+      <P>
+        In my spare time, I am creating for the web, creating art at home, and
+        working on getting stronger (mentally & physically). My fiancé is also a
+        web developer. Check out his profile&nbsp;
+        <A href="https://ohearonkg.dev/" target="_blank">
+          here
+        </A>
+        . Yes, we are a coding couple 👩‍💻❤️👨‍💻
+      </P>
+    </Intro>
+    <DIV>
+      <DIVROW>
+        <IMG src={grad} alt="DAL Grad" title="DAL Grad" />
+        <Text>
+          <H2>DAL Grad</H2>
+          <HR />
+          <P>
+            I took a Bachelor of Computer Science from Dalhousie University,
+            with a minor in Mathematics & a focus in Music. Learn more about the
+            CS program&nbsp;
+            <A href="https://cs.dal.ca" target="_blank">
+              here
+            </A>
+            .
+          </P>
+        </Text>
+      </DIVROW>
 
-  return (
-    <Layout>
-      <Head title="About" />
+      <DIVROW>
+        <Text>
+          <H2>WiTS</H2>
+          <HR />
+          <P>
+            For many years I was on the exec for the Women in Technology Society
+            (WiTS). The focus was for women and other underrepresented groups to
+            feel welcome in CS, and in the broader tech industry. Learn more
+            about the society&nbsp;
+            <A href="https://wits.cs.dal.ca/" target="_blank">
+              here
+            </A>
+            .
+          </P>
+        </Text>
+        <IMG src={wits} alt="WITS" title="WITS" />
+      </DIVROW>
 
-      <Banner title="About Me" />
+      <DIVROW>
+        <IMG
+          src={clc}
+          alt="Canada Learning Code"
+          title="Canada Learning Code"
+        />
+        <Text>
+          <H2>Canada Learning Code</H2>
+          <HR />
+          <P>
+            I volunteer as a mentor for Canada Learning Code. This teaches kids,
+            adults, and teachers alike coding fundamentals, with a variety of
+            different topics, like game making, website creation, design, data
+            visualization, and more. Learn more about the program&nbsp;
+            <A href="https://www.canadalearningcode.ca/" target="_blank">
+              here
+            </A>
+            .
+          </P>
+        </Text>
+      </DIVROW>
+    </DIV>
+  </Layout>
+)
 
-      <div id="main">
-        <section id="one">
-          <div className="inner">
-            <header>
-              <Img
-                className="fullWidth"
-                fluid={data.file.childImageSharp.fluid}
-                alt="Collage"
-              />
-              <div className="bio">
-                <h3>10 Facts About Me</h3>
-                <ol>
-                  <li>
-                    My name is Sarah, I live in Halifax NS, and I have been
-                    working in the technology industry for over 6 years.
-                  </li>
-                  <li>
-                    I graduated from Dalhousie with a BCS (Co-op) and a minor in
-                    Mathematics in 2015.
-                  </li>
-                  <li>
-                    I love Crossfit and Powerlifting. My favourite strength
-                    training exercises are bench press and deadlifts, and my
-                    favourite WODs (workout of the days) are long AMRAPs (as
-                    many reps as possible).
-                  </li>
-                  <li>
-                    I love music. I took performance flute courses in
-                    University, and also sang/performed in my spare time through
-                    various organizations like Dalhousie University and The
-                    Halifax Music Co-op. I've also volunteered for the Halifax
-                    Jazz Festival and the Halifax Pop Explosion.
-                  </li>
-                  <li>
-                    Some of the cities I have visted recently:
-                    <ul>
-                      <li>Toronto, ON</li>
-                      <li>Portland, ME</li>
-                      <li>Boston, MA</li>
-                      <li>San Fransisco, CA</li>
-                      <li>New York, NY</li>
-                      <li>Seattle, WA</li>
-                    </ul>
-                  </li>
-                  <li>
-                    I love to stay active within the development community. I am
-                    a mentor for Canada Learning Code and also attend the
-                    monthly Halifax React Meetup.
-                  </li>
-                  <li>
-                    I love to be creative. I love painting, and hang many of my
-                    paintings on the walls in my apartment, and also love to
-                    create paper and digital designs like posters and cards.
-                  </li>
-                  <li>
-                    Favourite food: garlic fingers & donair sauce
-                    <br />
-                    Favourite drink: Cold caffeine: iced coffee, cold brew &
-                    energy drinks
-                    <br /> Favourite dessert: ice cream (favourite flavour:
-                    skor/oreo/caramel)
-                  </li>
-                  <li>
-                    My fiancé also codes - a couple who codes together stays
-                    together ;)
-                  </li>
-                  <li>
-                    Next vacation: either a Caribbean cruise, or taking the
-                    train through Europe!
-                  </li>
-                </ol>
-              </div>
-            </header>
-          </div>
-        </section>
-        <section id="two" className="tiles">
-          <article style={{ backgroundImage: `url(${work})` }}>
-            <header className="major">
-              <h3>Work</h3>
-              <p>
-                I have been working for over six years in software development.
-                Check out my resume and some of my past/current projects.
-              </p>
-            </header>
-            <Link to="/work" className="link primary" />
-          </article>
-          <article style={{ backgroundImage: `url(${blog})` }}>
-            <header className="major">
-              <h3>Blog</h3>
-              <p>
-                I'll share my tips and tricks with fitness, health, coding,
-                adulting, travelling adventures!
-              </p>
-            </header>
-            <Link to="/blog" className="link primary" />
-          </article>
-        </section>
-      </div>
-    </Layout>
-  );
-};
+export default About
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "collage.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 930) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+const DIV = styled.div`
+  margin: 100px 0 150px;
+
+  @media only screen and (min-width: 768px) {
+    margin: 100px 0 200px;
   }
-`;
+`
 
-export default About;
+const DIVROW = styled.div`
+  max-width: 1440px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 32px;
+  z-index: 10;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    margin: 32px auto;
+    width: 100%;
+  }
+`
+
+const H2 = styled.h1`
+  font-family: "Hipster", cursive;
+  color: #fff;
+  font-size: 54px;
+  filter: drop-shadow(1px 1px 2px #000);
+  margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 32px auto;
+  }
+`
+
+const IMG = styled.img`
+  width: 50%;
+  max-width: 500px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const P = styled.p`
+  font-family: "UnicaOne", sans-serif;
+  text-transform: lowercase;
+  color: #000;
+  font-size: 22px;
+  line-height: 22px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+    margin: 32px auto;
+  }
+`
+
+const Text = styled.div`
+  width: 100%;
+  padding: 32px;
+
+  @media only screen and (min-width: 768px) {
+    width: 50%;
+  }
+`
+
+const HR = styled.hr`
+  width: 32px;
+  height: 2px;
+`
+
+const A = styled.a`
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "UnicaOne",sans-serif;
+  text-decoration: none;
+  color: #fff;
+  transition: filter 0.3s;
+  text-shadow: 0px 0px 3px rgba(86,59,206,1);
+
+  &:hover {
+    transition: filter 0.3s;
+    filter: drop-shadow(0px 0px 5px rgba(0,176,200,1));
+  }
+}`
+
+const HERO = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 1440px;
+  margin-bottom: 32px;
+`
+
+const CIRCLE = styled.img`
+  max-width: 200px;
+  height: auto;
+  border: 5px solid;
+  border-image: linear-gradient(
+      to right,
+      #000025 20%,
+      #f3df95 20%,
+      #ff8cab 40%,
+      #563bce 60%,
+      #00b0c8 80%,
+      #000025 80%
+    )
+    30;
+`
+
+const Intro = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 32px;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  p {
+    margin: 0 16px;
+  }
+`

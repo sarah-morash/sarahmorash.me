@@ -1,49 +1,12 @@
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
-
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
-
-  const postTemplate = path.resolve(`src/templates/BlogPost.js`);
-
-  return graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: postTemplate,
-        context: { slug: node.fields.slug }
-      });
-    });
-  });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode, basePath: "pages" });
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug
-    });
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/andkg/)) {
+    page.matchPath = "/andkg/*"
+    // Update the page.
+    createPage(page)
   }
-};
+}
