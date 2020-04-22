@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import Hero from "../components/hero"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import Hero from "../components/hero";
+import SEO from "../components/seo";
 
 const IndexPage = () => (
   <Layout>
@@ -45,19 +45,19 @@ const IndexPage = () => (
       </FLEX>
     </DIV>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 const DIV = styled.div`
   margin: auto 32px;
-`
+`;
 
 const SPAN = styled.span`
   font-size: 64px;
   color: #563bce;
   opacity: 0.5;
-`
+`;
 
 const P = styled.p`
   font-family: "UnicaOne", sans-serif;
@@ -73,7 +73,7 @@ const P = styled.p`
   @media only screen and (min-width: 768px) {
     padding: 32px;
   }
-`
+`;
 
 const FLEX = styled.div`
   display: flex;
@@ -85,7 +85,7 @@ const FLEX = styled.div`
   @media only screen and (min-width: 768px) {
     margin: 0 0 150px;
   }
-`
+`;
 
 const BLURB = styled.div`
   display: flex;
@@ -98,7 +98,7 @@ const BLURB = styled.div`
     flex-direction: row;
     padding: 0;
   }
-`
+`;
 
 const A = styled.a`
   font-size: 20px;
@@ -113,4 +113,4 @@ const A = styled.a`
     transition: filter 0.3s;
     filter: drop-shadow(0px 0px 5px rgba(0,176,200,1));
   }
-}`
+}`;
