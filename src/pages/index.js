@@ -2,50 +2,53 @@ import React from "react";
 import styled from "styled-components";
 
 import Layout from "../components/layout";
-import Hero from "../components/Hero";
+import Hero from "../components/hero";
 import SEO from "../components/seo";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Hero />
-    <DIV>
-      <FLEX>
-        <BLURB>
-          <SPAN className="fas fa-anchor" style={{ color: "#f3df95" }} />
-          <P>
-            Born & raised in Nova Scotia, Canada. You know, that place where
-            Ellen Page, Sidney Crosby, Sarah McLachlan & Trailer Park Boys come
-            from 😉 #EASTCOAST
-          </P>
-        </BLURB>
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Hero />
+      <DIV>
+        <FLEX>
+          <BLURB>
+            <SPAN className="fas fa-anchor" style={{ color: "#f3df95" }} />
+            <P>
+              Born & raised in Nova Scotia, Canada. You know, that place where
+              Ellen Page, Sidney Crosby, Sarah McLachlan & Trailer Park Boys
+              come from 😉 #EASTCOAST
+            </P>
+          </BLURB>
 
-        <BLURB>
-          <SPAN className="fas fa-terminal" style={{ color: "#563bce" }} />
-          <P>
-            Over six years of software development experience. From fullstack
-            CMS development, to front-end react development, and working on
-            expanding my cloud knowledge with AWS & learning GO! Passion for
-            learning new technologies and providing mentorship/teaching others.
-          </P>
-        </BLURB>
+          <BLURB>
+            <SPAN className="fas fa-terminal" style={{ color: "#563bce" }} />
+            <P>
+              Over six years of software development experience. From fullstack
+              CMS development, to front-end react development, and working on
+              expanding my cloud knowledge with AWS & learning GO! Passion for
+              learning new technologies and providing mentorship/teaching
+              others.
+            </P>
+          </BLURB>
 
-        <BLURB>
-          <SPAN className="fas fa-dumbbell" style={{ color: "#ff8cab" }} />
-          <P>
-            When I'm not coding, I'm working on my fitness. I am a regular
-            crossfitter @&nbsp;
-            <A href="http://www.crossfitkinetics.com/" target="_blank">
-              Crossfit Kinetics
-            </A>
-            &nbsp;who enjoys long WODs, heavy weights (powerlifting FTW), and
-            double unders 💪
-          </P>
-        </BLURB>
-      </FLEX>
-    </DIV>
-  </Layout>
-);
+          <BLURB>
+            <SPAN className="fas fa-dumbbell" style={{ color: "#ff8cab" }} />
+            <P>
+              When I'm not coding, I'm working on my fitness. I am a regular
+              crossfitter @&nbsp;
+              <A href="http://www.crossfitkinetics.com/" target="_blank">
+                Crossfit Kinetics
+              </A>
+              &nbsp;who enjoys long WODs, heavy weights (powerlifting FTW), and
+              double unders 💪
+            </P>
+          </BLURB>
+        </FLEX>
+      </DIV>
+    </Layout>
+  );
+};
 
 export default IndexPage;
 

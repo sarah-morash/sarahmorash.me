@@ -1,42 +1,63 @@
-import React, { useState } from "react"
-import { navigate } from "gatsby"
-import styled from "styled-components"
+import React, { useState } from "react";
+import { navigate, useStaticQuery } from "gatsby";
+import styled from "styled-components";
 
-import { handleLogin, isLoggedIn } from "../services/auth"
-
-import hero from "../images/wedding/hero.jpg"
-import closeup from "../images/wedding/close-up.jpg"
-import bw from "../images/wedding/bw.jpg"
-
-import Layout from "./layout"
-import SEO from "./seo"
+import { isLoggedIn } from "../services/auth";
+import Layout from "./layout";
+import SEO from "./seo";
 
 const Login = () => {
-  const [password, setPassword] = useState("")
+  const { bw, closeup, hero } = useStaticQuery(graphql`
+    query {
+      bw: file(relativePath: { eq: "wedding/bw.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      closeup: file(relativePath: { eq: "wedding/close-up.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hero: file(relativePath: { eq: "wedding/hero.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
 
-  const handleUpdate = event => {
-    setPassword(event.target.value)
-  }
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    handleLogin(password)
-  }
+  // const handleUpdate = event => {
+  //   setPassword(event.target.value);
+  // };
+
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   handleLogin(password);
+  // };
 
   if (isLoggedIn()) {
-    navigate(`/andkg`)
+    navigate(`/andkg`);
   }
 
   return (
     <Layout>
       <SEO title="Wedding" />
-      <IMG>
+      <Hero source={hero.childImageSharp.fluid.src}>
         <OVERLAYTOP>
           <H1>Our Happily Ever After</H1>
         </OVERLAYTOP>
-      </IMG>
+      </Hero>
       <DIVROW>
-        <Closeup />
+        <Closeup source={closeup.childImageSharp.fluid.src} />
         <Text>
           <H2>About Us</H2>
           <HR />
@@ -52,7 +73,7 @@ const Login = () => {
           </P>
         </Text>
       </DIVROW>
-      <BW>
+      <BW source={bw.childImageSharp.fluid.src}>
         <OVERLAY />
       </BW>
       <DIV>
@@ -74,10 +95,10 @@ const Login = () => {
         <LOGIN type="submit" value="Log In" />
       </form> */}
     </Layout>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
 
 const DIV = styled.div`
   max-width: 1440px;
@@ -89,7 +110,7 @@ const DIV = styled.div`
   max-width: 1440px;
   z-index: 100;
   margin-bottom: 200px;
-`
+`;
 
 const DIVROW = styled.div`
   max-width: 1440px;
@@ -103,7 +124,7 @@ const DIVROW = styled.div`
     flex-direction: row;
     margin: 32px auto;
   }
-`
+`;
 
 const H1 = styled.h1`
   font-family: "Hipster", cursive;
@@ -116,7 +137,7 @@ const H1 = styled.h1`
   @media only screen and (min-width: 768px) {
     font-size: 80px;
   }
-`
+`;
 
 const H2 = styled.h1`
   font-family: "Hipster", cursive;
@@ -128,7 +149,7 @@ const H2 = styled.h1`
   @media only screen and (min-width: 768px) {
     font-size: 80px;
   }
-`
+`;
 
 const LABEL = styled.label`
   font-family: "UnicaOne", sans-serif;
@@ -140,7 +161,7 @@ const LABEL = styled.label`
   margin: 32px 0 0 0;
   text-transform: lowercase;
   display: block;
-`
+`;
 
 const PASSWORD = styled.input`
   display: block;
@@ -160,7 +181,7 @@ const PASSWORD = styled.input`
   background: #fff;
   transition: filter 0.3s;
   text-shadow: 0px 0px 3px rgba(86, 59, 206, 1);
-`
+`;
 
 const LOGIN = styled.input`
   padding: 6px 8px;
@@ -187,10 +208,10 @@ const LOGIN = styled.input`
     transition: filter 0.3s;
     text-shadow: 0px 0px 3px rgba(0, 176, 200, 1);
   }
-`
+`;
 
-const IMG = styled.div`
-  background-image: url('${hero}');
+const Hero = styled.div`
+  background-image: url(${props => props.source});
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -202,10 +223,10 @@ const IMG = styled.div`
   color: #fff;
   z-index: 0;
   margin-bottom: 32px;
-`
+`;
 
 const Closeup = styled.div`
-  background-image: url('${closeup}');
+  background-image: url(${props => props.source});
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -220,10 +241,10 @@ const Closeup = styled.div`
   @media only screen and (min-width: 768px) {
     width: 50%;
   }
-`
+`;
 
 const BW = styled.div`
-  background-image: url('${bw}');
+  background-image: url(${props => props.source});
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -235,8 +256,7 @@ const BW = styled.div`
   color: #fff;
   z-index: 0;
   margin-bottom: 32px;
-
-`
+`;
 
 const P = styled.p`
   font-family: "UnicaOne", sans-serif;
@@ -245,7 +265,7 @@ const P = styled.p`
   font-size: 22px;
   line-height: 22px;
   margin: 32px 16px;
-`
+`;
 
 const Text = styled.div`
   width: 100%;
@@ -255,22 +275,22 @@ const Text = styled.div`
     width: 50%;
     padding: 0;
   }
-`
+`;
 
 const HR = styled.hr`
   width: 32px;
   margin-left: 32px;
   height: 2px;
-`
+`;
 
 const OVERLAY = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(117, 190, 183, 0.5);
-`
+`;
 
 const OVERLAYTOP = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(250, 195, 235, 0.5);
-`
+`;

@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import resume from "../files/Resume_SarahMorash_2020.pdf"
+import resume from "../assets/files/Resume_SarahMorash_2020.pdf";
 
 const Footer = () => {
   const scrollToTop = () => {
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0
-  }
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
 
   return (
     <StyledFooter>
@@ -51,10 +51,10 @@ const Footer = () => {
         </A>
       </RightDiv>
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 
 const StyledFooter = styled.footer`
   position: sticky;
@@ -63,7 +63,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 const LeftDiv = styled.div`
   display: flex;
@@ -72,20 +72,20 @@ const LeftDiv = styled.div`
   width: 200px;
   height: 100px;
   margin: 0 32px;
-`
+`;
 
 const RightDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin: 0 32px;
-`
+`;
 
 const SVG = styled.svg`
   bottom: 0;
   position: absolute;
   width: 100%;
-`
+`;
 
 const Social = styled.a`
   font-size: 32px;
@@ -98,7 +98,7 @@ const Social = styled.a`
     transition: filter 0.2s;
     filter: drop-shadow(0px 0px 3px #276fb9);
   }
-`
+`;
 
 const A = styled.a`
   padding: 6px 8px;
@@ -122,7 +122,7 @@ const A = styled.a`
     transition: filter 0.3s;
     text-shadow: 0px 0px 3px rgba(0, 176, 200, 1);
   }
-`
+`;
 
 const SPAN = styled.span`
   margin-left: auto;
@@ -137,4 +137,4 @@ const SPAN = styled.span`
     transform: translate(0px, -10px);
     transition: transform 0.3s;
   }
-`
+`;
