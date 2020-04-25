@@ -1,21 +1,21 @@
-import redspace from "../images/work/redspace.png"
-import harbr from "../images/work/platform.png"
-import harbrweb from "../images/work/harbrweb.png"
-import tnb from "../images/work/TNB.png"
-import top from "../images/work/TOP.png"
-import mattamy from "../images/work/MATTAMY.png"
-import rogers from "../images/work/ROGERS.png"
-import nslc from "../images/work/NSLC.png"
-import wholesale from "../images/work/WHOLESALE.png"
+import redspace from "../images/work/redspace.png";
+import harbr from "../images/work/platform.png";
+import harbrweb from "../images/work/harbrweb.png";
+import tnb from "../images/work/TNB.png";
+import top from "../images/work/TOP.png";
+import mattamy from "../images/work/MATTAMY.png";
+import rogers from "../images/work/ROGERS.png";
+import nslc from "../images/work/NSLC.png";
+import wholesale from "../images/work/WHOLESALE.png";
 
-import sitecore from "../images/work/sitecore.png"
-import kentico from "../images/work/kentico.png"
-import redux from "../images/work/redux.png"
-import wordpress from "../images/work/wordpress.png"
-import graphql from "../images/work/graphql.png"
-import react from "../images/work/react.png"
-import sql from "../images/work/sql.png"
-import net from "../images/work/net.png"
+import sitecore from "../images/work/sitecore.png";
+import kentico from "../images/work/kentico.png";
+import redux from "../images/work/redux.png";
+import wordpress from "../images/work/wordpress.png";
+import graphql from "../images/work/graphql.png";
+import react from "../images/work/react.png";
+import sql from "../images/work/sql.png";
+import net from "../images/work/net.png";
 
 export const projects = [
   {
@@ -27,13 +27,13 @@ export const projects = [
     technologies: [
       {
         name: "React",
-        image: react,
+        image: react
       },
       {
         name: "Redux",
-        image: redux,
-      },
-    ],
+        image: redux
+      }
+    ]
   },
   {
     position: "Harbr (2018 - 2019)",
@@ -44,17 +44,17 @@ export const projects = [
     technologies: [
       {
         name: "React",
-        image: react,
+        image: react
       },
       {
         name: "Redux",
-        image: redux,
+        image: redux
       },
       {
         name: "GraphQL",
-        image: graphql,
-      },
-    ],
+        image: graphql
+      }
+    ]
   },
   {
     position: "Harbr (2018 - 2019)",
@@ -65,9 +65,9 @@ export const projects = [
     technologies: [
       {
         name: "WordPress",
-        image: wordpress,
-      },
-    ],
+        image: wordpress
+      }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -78,14 +78,14 @@ export const projects = [
     technologies: [
       {
         name: "Sitecore",
-        image: sitecore,
+        image: sitecore
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
+      { name: "SQL", image: sql }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -96,14 +96,14 @@ export const projects = [
     technologies: [
       {
         name: "Sitecore",
-        image: sitecore,
+        image: sitecore
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
+      { name: "SQL", image: sql }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -114,14 +114,14 @@ export const projects = [
     technologies: [
       {
         name: "Sitecore",
-        image: sitecore,
+        image: sitecore
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
+      { name: "SQL", image: sql }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -132,14 +132,14 @@ export const projects = [
     technologies: [
       {
         name: "Kentico",
-        image: kentico,
+        image: kentico
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
+      { name: "SQL", image: sql }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -150,14 +150,14 @@ export const projects = [
     technologies: [
       {
         name: "Sitecore",
-        image: sitecore,
+        image: sitecore
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
+      { name: "SQL", image: sql }
+    ]
   },
   {
     position: "T4G Limited (2014 - 2018)",
@@ -168,13 +168,13 @@ export const projects = [
     technologies: [
       {
         name: "Sitecore",
-        image: sitecore,
+        image: sitecore
       },
       {
         name: ".NET",
-        image: net,
+        image: net
       },
-      { name: "SQL", image: sql },
-    ],
-  },
-]
+      { name: "SQL", image: sql }
+    ]
+  }
+];
