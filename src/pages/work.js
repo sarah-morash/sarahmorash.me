@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -11,7 +12,7 @@ const Work = ({ data }) => {
   return (
     <Layout>
       <SEO title="Work" />
-      <HERO source={data.heroImage.childImageSharp.fluid.src} alt="work" />
+      <HERO fluid={data.heroImage.childImageSharp.fluid} />
       <TITLE>
         <H2>Examples of my work</H2>
         <SPAN className="fas fa-laptop-code" />
@@ -62,12 +63,7 @@ const SPAN = styled.span`
   opacity: 0.5;
 `;
 
-const HERO = styled.div`
-  background-image: url(${props => props.source});
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+const HERO = styled(Img)`
   width: 100%;
   height: 500px;
   margin-bottom: 32px;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { navigate, useStaticQuery } from "gatsby";
 import styled from "styled-components";
+import Img from "gatsby-image";
 
 import { isLoggedIn } from "../services/auth";
 import Layout from "./layout";
@@ -57,7 +58,7 @@ const Login = () => {
         </OVERLAYTOP>
       </Hero>
       <DIVROW>
-        <Closeup source={closeup.childImageSharp.fluid.src} />
+        <Closeup fluid={closeup.childImageSharp.fluid} alt="Closeup photo" />
         <Text>
           <H2>About Us</H2>
           <HR />
@@ -225,10 +226,7 @@ const Hero = styled.div`
   margin-bottom: 32px;
 `;
 
-const Closeup = styled.div`
-  background-image: url(${props => props.source});
-  background-position: center;
-  background-size: cover;
+const Closeup = styled(Img)`
   width: 100%;
   max-width: 500px;
   height: 500px;

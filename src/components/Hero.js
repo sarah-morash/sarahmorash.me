@@ -56,11 +56,6 @@ const H2 = styled.h2`
   text-transform: lowercase;
 `;
 
-const IMG = styled.img`
-  width: 100%;
-  height: auto;
-`;
-
 const TextContainer = styled.div`
   -webkit-font-smoothing: auto;
   padding-left: 32px;
