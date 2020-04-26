@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
-import wits from "../assets/images/about/wits.jpg";
-import grad from "../assets/images/about/grad.jpg";
-import clc from "../assets/images/about/clc.jpg";
-import me from "../assets/images/about/animate-me.png";
 
 const About = ({ data }) => {
   return (
     <Layout>
       <SEO title="About" />
-      <HERO src={data.heroImage.childImageSharp.fluid.src} alt="collage" />
+      <HERO fluid={data.heroImage.childImageSharp.fluid} alt="collage" />
       <Intro>
-        <CIRCLE src={me} alt="me" />
+        <CIRCLE
+          fluid={data.me.childImageSharp.fluid}
+          alt="Animated me"
+          title="Animated me"
+        />
         <P>
           Hey, my name is Sarah Morash and I have been a software developer for
           over 6 years now. I have been fortunate to work for companies such
@@ -47,7 +47,11 @@ const About = ({ data }) => {
       </Intro>
       <DIV>
         <DIVROW>
-          <IMG src={grad} alt="DAL Grad" title="DAL Grad" />
+          <IMG
+            fluid={data.grad.childImageSharp.fluid}
+            alt="DAL Grad"
+            title="DAL Grad"
+          />
           <Text>
             <H2>DAL Grad</H2>
             <HR />
@@ -78,12 +82,16 @@ const About = ({ data }) => {
               .
             </P>
           </Text>
-          <IMG src={wits} alt="WITS" title="WITS" />
+          <IMG
+            fluid={data.wits.childImageSharp.fluid}
+            alt="WITS"
+            title="WITS"
+          />
         </DIVROW>
 
         <DIVROW>
           <IMG
-            src={clc}
+            fluid={data.clc.childImageSharp.fluid}
             alt="Canada Learning Code"
             title="Canada Learning Code"
           />
@@ -111,6 +119,34 @@ const About = ({ data }) => {
 export const query = graphql`
   query {
     heroImage: file(relativePath: { eq: "about/collage.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    wits: file(relativePath: { eq: "about/wits.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    grad: file(relativePath: { eq: "about/grad.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    clc: file(relativePath: { eq: "about/clc.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    me: file(relativePath: { eq: "about/animate-me.png" }) {
       childImageSharp {
         fluid(maxWidth: 1440, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -159,7 +195,7 @@ const H2 = styled.h1`
   }
 `;
 
-const IMG = styled.img`
+const IMG = styled(Img)`
   width: 50%;
   max-width: 500px;
 
@@ -211,16 +247,18 @@ const A = styled.a`
   }
 }`;
 
-const HERO = styled.img`
+const HERO = styled(Img)`
   width: 100%;
   height: auto;
   max-height: 1440px;
   margin-bottom: 32px;
 `;
 
-const CIRCLE = styled.img`
+const CIRCLE = styled(Img)`
+  width: 100%;
   max-width: 200px;
   height: auto;
+  margin: 16px;
   border: 5px solid;
   border-image: linear-gradient(
       to right,
