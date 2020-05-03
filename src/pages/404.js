@@ -1,27 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import cx from "classnames";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const NotFoundPage = ({ data }) => (
-  <Layout>
-    <SEO title="404" />
-    <HERO fluid={data.heroImage.childImageSharp.fluid} alt="collage" />
-    <Intro>
-      <CIRCLE
-        fluid={data.me.childImageSharp.fluid}
-        alt="Animated me"
-        title="Animated me"
-      />
-    </Intro>
-  </Layout>
-);
+const NotFoundPage = ({ data }) => {
+  console.log(data);
+  return (
+    <Layout>
+      <SEO title="404" />
+      <HERO fluid={data.hero.childImageSharp.fluid} alt="Hero image" />
+      <Title>
+        <Heading>404</Heading>
+        <Icon className={cx("fas", "fa-exclamation-triangle")} />
+      </Title>
+      <Intro>
+        <CIRCLE
+          fluid={data.tuba.childImageSharp.fluid}
+          alt="Tuba Sarah"
+          title="Tuba Sarah"
+        />
+        <P>Womp, womp... Looks like this page can't be found.</P>
+        <P>Fun fact: I used to play tuba in high school!</P>
+      </Intro>
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "about/collage.jpg" }) {
+    hero: file(relativePath: { eq: "not-found/hero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    tuba: file(relativePath: { eq: "not-found/tuba.png" }) {
       childImageSharp {
         fluid(maxWidth: 1440, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -35,32 +52,13 @@ export default NotFoundPage;
 
 const HERO = styled(Img)`
   width: 100%;
-  height: auto;
-  max-height: 1440px;
-  margin-bottom: 32px;
+  height: 500px;
+  margin-bottom: 50px;
 `;
 
 const CIRCLE = styled(Img)`
   width: 100%;
   max-width: 200px;
-  height: auto;
-  margin: 16px;
-  border: 5px solid;
-  border-image: linear-gradient(
-      to right,
-      #000025 20%,
-      #f3df95 20%,
-      #ff8cab 40%,
-      #563bce 60%,
-      #00b0c8 80%,
-      #000025 80%
-    )
-    30;
-`;
-
-const LARGERCIRCLE = styled(Img)`
-  width: 100%;
-  max-width: 300px;
   height: auto;
   margin: 16px;
   border: 5px solid;
@@ -90,4 +88,39 @@ const Intro = styled.div`
   p {
     margin: 0 16px;
   }
+`;
+
+const P = styled.p`
+  font-family: "UnicaOne", sans-serif;
+  text-transform: lowercase;
+  color: #000;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Heading = styled.h1`
+  font-family: "Hipster", cursive;
+  color: #fff;
+  font-size: 100px;
+  filter: drop-shadow(1px 1px 2px #000);
+  margin: 0;
+  padding: 0 16px;
+`;
+
+const Icon = styled.span`
+  font-size: 32px;
+  color: #563bce;
+  opacity: 0.5;
 `;
