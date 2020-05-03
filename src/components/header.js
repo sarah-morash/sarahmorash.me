@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import React from "react"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 const Header = () => (
   <StyledHeader>
@@ -13,9 +13,9 @@ const Header = () => (
       <StyledLink to="/andkg">+KG</StyledLink>
     </DIV>
   </StyledHeader>
-)
+);
 
-export default Header
+export default Header;
 
 const StyledHeader = styled.header`
   display: flex;
@@ -33,12 +33,12 @@ const StyledHeader = styled.header`
       #563bce 80%
     )
     30;
-`
+`;
 
 const DIV = styled.div`
   height: 100%;
   padding-right: 32px;
-`
+`;
 
 const SPAN = styled.span`
   font-family: "Hipster", cursive;
@@ -64,7 +64,7 @@ const SPAN = styled.span`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-`
+`;
 
 const StyledLink = styled(Link)`
   font-family: "UnicaOne", sans-serif;
@@ -76,9 +76,13 @@ const StyledLink = styled(Link)`
   margin: 32px 16px;
   text-decoration: none;
   -webkit-font-smoothing: auto;
+  transition: all 0.3s;
+  text-shadow: 2px 2px #f3df95;
 
   &:hover {
-    transition: filter 0.3s;
-    filter: drop-shadow(3px 3px 3px #f3df95);
+    color: #fff;
+    transition: all 0.2s;
+    text-shadow: 2px 2px #ff8cab;
+    filter: drop-shadow(1px 1px 5px #00b0c8);
   }
-`
+`;

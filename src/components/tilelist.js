@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import "../css/all.min.css";
+import "../css/main.css";
+
 const TileList = ({ list }) => {
   return (
     <DIV>
@@ -9,7 +12,6 @@ const TileList = ({ list }) => {
           <A title={item.title} href={item.link}>
             <Image src={item.image}></Image>
           </A>
-
           <Name>{item.title}</Name>
           <Position>{item.position}</Position>
           <Description>{item.text}</Description>
@@ -49,6 +51,7 @@ const DIV = styled.div`
 
 const A = styled.a`
   text-decoration: none;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -60,6 +63,7 @@ const Image = styled.img`
     transition: filter 0.5s;
     filter: drop-shadow(0px 0px 6px #f3df95);
   }
+}
 `;
 
 const Name = styled.span`

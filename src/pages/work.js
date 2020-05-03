@@ -1,25 +1,33 @@
 import React from "react";
-import styled from "styled-components";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import cx from "classnames";
+import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TileList from "../components/tilelist";
 import { projects } from "../assets/files/projects";
 
+import "../css/main.css";
+import "../css/all.css";
+
 const Work = ({ data }) => {
   return (
     <Layout>
       <SEO title="Work" />
-      <HERO fluid={data.heroImage.childImageSharp.fluid} />
-      <TITLE>
-        <H2>Examples of my work</H2>
-        <SPAN className="fas fa-laptop-code" />
-      </TITLE>
-      <DIV>
+      <Hero fluid={data.heroImage.childImageSharp.fluid} />
+      <Title>
+        <Heading>Examples of my work</Heading>
+        <Icon className={cx("fas", "fa-laptop-code")} />
+      </Title>
+      <Section>
         <TileList list={projects} />
-      </DIV>
+      </Section>
+      <Note>
+        check out my resume here
+        <Span className="far fa-arrow-alt-circle-down"></Span>
+      </Note>
     </Layout>
   );
 };
@@ -38,17 +46,24 @@ export const query = graphql`
 
 export default Work;
 
-const DIV = styled.div`
-  margin-bottom: 150px;
+const Hero = styled(Img)`
+  width: 100%;
+  height: 500px;
+  margin-bottom: 32px;
+
+  :hover {
+  }
 `;
 
-const TITLE = styled.div`
+const Section = styled.div``;
+
+const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const H2 = styled.h1`
+const Heading = styled.h1`
   font-family: "Hipster", cursive;
   color: #fff;
   font-size: 54px;
@@ -57,14 +72,31 @@ const H2 = styled.h1`
   padding: 0 16px;
 `;
 
-const SPAN = styled.span`
+const Icon = styled.span`
   font-size: 32px;
   color: #563bce;
   opacity: 0.5;
 `;
 
-const HERO = styled(Img)`
-  width: 100%;
-  height: 500px;
-  margin-bottom: 32px;
+const Span = styled.span`
+  font-size: 32px;
+  color: #563bce;
+  opacity: 0.5;
+  margin: 0 32px;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(0px, 10px);
+    transition: transform 0.3s;
+  }
+`;
+
+const Note = styled.h3`
+  font-family: "Hipster", cursive;
+  font-size: 32px;
+  color: #000;
+  margin-left: auto;
+  margin-right: 24px;
+  text-align: center;
+  width: 100px;
 `;

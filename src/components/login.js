@@ -7,6 +7,9 @@ import { isLoggedIn } from "../services/auth";
 import Layout from "./layout";
 import SEO from "./seo";
 
+import "../css/all.min.css";
+import "../css/main.css";
+
 const Login = () => {
   const { bw, closeup, hero } = useStaticQuery(graphql`
     query {

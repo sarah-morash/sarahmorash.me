@@ -53,7 +53,7 @@ const About = ({ data }) => {
             title="DAL Grad"
           />
           <Text>
-            <H2>DAL Grad</H2>
+            <H3>DAL Grad</H3>
             <HR />
             <P>
               I took a Bachelor of Computer Science from Dalhousie University,
@@ -69,7 +69,7 @@ const About = ({ data }) => {
 
         <DIVROW>
           <Text>
-            <H2>WiTS</H2>
+            <H3>WiTS</H3>
             <HR />
             <P>
               For many years I was on the exec for the Women in Technology
@@ -96,7 +96,7 @@ const About = ({ data }) => {
             title="Canada Learning Code"
           />
           <Text>
-            <H2>Canada Learning Code</H2>
+            <H3>Canada Learning Code</H3>
             <HR />
             <P>
               I volunteer as a mentor for Canada Learning Code. This teaches
@@ -111,6 +111,79 @@ const About = ({ data }) => {
             </P>
           </Text>
         </DIVROW>
+      </DIV>
+      <DIV>
+        <H2>Conferences I've attended</H2>
+        <List>
+          <INFO>
+            <LARGERCIRCLE
+              fluid={data.gn.childImageSharp.fluid}
+              alt="Google Next"
+              title="Google Next"
+            />
+            <P>Google Next</P>
+            <P>
+              <small>April 9-11, 2019</small>
+            </P>
+            <P>
+              <small>San Fransisco, California</small>
+            </P>
+            <P>
+              <small>Theme: All about the latest with Google Cloud</small>
+            </P>
+          </INFO>
+          <INFO>
+            <LARGERCIRCLE
+              fluid={data.wu.childImageSharp.fluid}
+              alt="Web Unleashed"
+              title="Web Unleashed"
+            />
+            <P>Web Unleashed</P>
+            <P>
+              <small>September 13-14, 2019</small>
+            </P>
+            <P>
+              <small>Toronto, Ontario</small>
+            </P>
+            <P>
+              <small>Theme: All about the latest with the web</small>
+            </P>
+          </INFO>
+          <INFO>
+            <LARGERCIRCLE
+              fluid={data.ghc14.childImageSharp.fluid}
+              alt="Grace Hopper 2014"
+              title="Grace Hopper 2014"
+            />
+            <P>Grace Hopper Conference 2014</P>
+            <P>
+              <small>October 8-10, 2014</small>
+            </P>
+            <P>
+              <small>Phoenix, Arizona</small>
+            </P>
+            <P>
+              <small>Theme: Everywhere. Everyone.</small>
+            </P>
+          </INFO>
+          <INFO>
+            <LARGERCIRCLE
+              fluid={data.ghc15.childImageSharp.fluid}
+              alt="Grace Hopper 2015"
+              title="Grace Hopper 2015"
+            />
+            <P>Grace Hopper Conference 2015</P>
+            <P>
+              <small>October 14-16, 2015</small>
+            </P>
+            <P>
+              <small>Houston, Texas</small>
+            </P>
+            <P>
+              <small>Theme: Our Time to Lead</small>
+            </P>
+          </INFO>
+        </List>
       </DIV>
     </Layout>
   );
@@ -153,27 +226,64 @@ export const query = graphql`
         }
       }
     }
+    wu: file(relativePath: { eq: "about/wu.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    gn: file(relativePath: { eq: "about/gn.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ghc14: file(relativePath: { eq: "about/ghc14.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ghc15: file(relativePath: { eq: "about/ghc15.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 
 export default About;
 
 const DIV = styled.div`
-  margin: 100px 0 150px;
+  margin: 100px 32px;
+  max-width: 1440px;
+`;
 
-  @media only screen and (min-width: 768px) {
-    margin: 100px 0 200px;
+const INFO = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  width: 50%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 
 const DIVROW = styled.div`
-  max-width: 1440px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  margin: 32px;
   z-index: 10;
 
   @media only screen and (max-width: 768px) {
@@ -183,15 +293,31 @@ const DIVROW = styled.div`
   }
 `;
 
-const H2 = styled.h1`
+const H3 = styled.h3`
   font-family: "Hipster", cursive;
   color: #fff;
   font-size: 54px;
   filter: drop-shadow(1px 1px 2px #000);
-  margin: 0;
+  margin: auto;
 
   @media only screen and (max-width: 768px) {
-    margin: 32px auto;
+    margin: auto;
+  }
+`;
+
+const H2 = styled.h2`
+  font-family: "Hipster", cursive;
+  color: #fff;
+  font-size: 64px;
+  filter: drop-shadow(1px 1px 2px #000);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(1px 1px 5px #00b0c8);
+  text-shadow: 0px 0px 3px #ff8cab;
+
+  @media only screen and (max-width: 768px) {
+    margin: auto;
   }
 `;
 
@@ -210,11 +336,11 @@ const P = styled.p`
   color: #000;
   font-size: 22px;
   line-height: 22px;
+  margin: 0;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
     max-width: 500px;
-    margin: 32px auto;
   }
 `;
 
@@ -272,6 +398,24 @@ const CIRCLE = styled(Img)`
     30;
 `;
 
+const LARGERCIRCLE = styled(Img)`
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 16px;
+  border: 5px solid;
+  border-image: linear-gradient(
+      to right,
+      #000025 20%,
+      #f3df95 20%,
+      #ff8cab 40%,
+      #563bce 60%,
+      #00b0c8 80%,
+      #000025 80%
+    )
+    30;
+`;
+
 const Intro = styled.div`
   display: flex;
   flex-direction: column;
@@ -286,4 +430,13 @@ const Intro = styled.div`
   p {
     margin: 0 16px;
   }
+`;
+
+const List = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
 `;
