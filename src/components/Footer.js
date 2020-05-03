@@ -63,6 +63,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 200px;
 `;
 
 const LeftDiv = styled.div`
@@ -135,6 +136,7 @@ const SPAN = styled.span`
 
   &:hover {
     transform: translate(0px, -10px);
-    transition: transform 0.3s;
+    filter: drop-shadow(0px 0px 3px #276fb9);
+    transition: all 0.3s;
   }
 `;

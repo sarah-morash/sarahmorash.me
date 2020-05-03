@@ -633,24 +633,10 @@ pre tt:after {
   font-weight: 300;
   font-style: normal;
 }
-/*
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-ExtraLight.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: "Shadows";
-  src: url("../fonts/ShadowsIntoLightTwo-Regular.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ostrich";
-  src: url("../fonts/OstrichSans-Medium.otf") format("truetype");
+  font-family: "UnicaOne";
+  src: url("../fonts/UnicaOne-Regular.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -658,27 +644,6 @@ pre tt:after {
 @font-face {
   font-family: "Whisper";
   src: url("../fonts/WhisperADream.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lekton";
-  src: url("../fonts/Lekton-Regular.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-} 
-
-@font-face {
-  font-family: "OldStandard";
-  src: url("../fonts/OldStandardTT-Regular.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-} */
-
-@font-face {
-  font-family: "UnicaOne";
-  src: url("../fonts/UnicaOne-Regular.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
