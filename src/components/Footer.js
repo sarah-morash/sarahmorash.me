@@ -103,11 +103,11 @@ const Social = styled.a`
 
 const A = styled.a`
   padding: 6px 8px;
-  font-size: 20px;
+  font-size: 36px;
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Hipster", sans-serif;
   text-align: center;
   letter-spacing: 0px;
   text-decoration: none;
