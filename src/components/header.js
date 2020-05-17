@@ -8,9 +8,9 @@ const Header = () => (
       <SPAN>sm</SPAN>
     </Link>
     <DIV>
-      <StyledLink to="/about">About</StyledLink>
-      <StyledLink to="/work">Work</StyledLink>
-      <StyledLink to="/andkg">+KG</StyledLink>
+      <StyledLink to="/about">about</StyledLink>
+      <StyledLink to="/work">work</StyledLink>
+      <StyledLink to="/andkg">kg</StyledLink>
     </DIV>
   </StyledHeader>
 );
@@ -67,10 +67,9 @@ const SPAN = styled.span`
 `;
 
 const StyledLink = styled(Link)`
-  font-family: "UnicaOne", sans-serif;
-  text-transform: lowercase;
+  font-family: "Hipster", cursive;
   color: #000;
-  font-size: 22px;
+  font-size: 32px;
   line-height: 60px;
   letter-spacing: 0px;
   margin: 32px 16px;
