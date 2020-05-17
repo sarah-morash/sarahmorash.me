@@ -40,7 +40,7 @@ const About = ({ data }) => {
           working on getting stronger (mentally & physically). My fiancé is also
           a web developer. Check out his profile&nbsp;
           <A href="https://ohearonkg.dev/" target="_blank">
-            here
+            HERE
           </A>
           . Yes, we are a coding couple 👩‍💻❤️👨‍💻
         </P>
@@ -54,13 +54,12 @@ const About = ({ data }) => {
           />
           <Text>
             <H3>DAL Grad</H3>
-            <HR />
             <P>
               I took a Bachelor of Computer Science from Dalhousie University,
               with a minor in Mathematics & a focus in Music. Learn more about
               the CS program&nbsp;
               <A href="https://cs.dal.ca" target="_blank">
-                here
+                HERE
               </A>
               .
             </P>
@@ -70,14 +69,13 @@ const About = ({ data }) => {
         <DIVROW>
           <Text>
             <H3>WiTS</H3>
-            <HR />
             <P>
               For many years I was on the exec for the Women in Technology
               Society (WiTS). The focus was for women and other underrepresented
               groups to feel welcome in CS, and in the broader tech industry.
               Learn more about the society&nbsp;
               <A href="https://wits.cs.dal.ca/" target="_blank">
-                here
+                HERE
               </A>
               .
             </P>
@@ -97,7 +95,6 @@ const About = ({ data }) => {
           />
           <Text>
             <H3>Canada Learning Code</H3>
-            <HR />
             <P>
               I volunteer as a mentor for Canada Learning Code. This teaches
               kids, adults, and teachers alike coding fundamentals, with a
@@ -105,7 +102,7 @@ const About = ({ data }) => {
               design, data visualization, and more. Learn more about the
               program&nbsp;
               <A href="https://www.canadalearningcode.ca/" target="_blank">
-                here
+                HERE
               </A>
               .
             </P>
@@ -113,14 +110,18 @@ const About = ({ data }) => {
         </DIVROW>
       </DIV>
       <DIV>
-        <H2>Conferences I've attended</H2>
+        <Title>
+          <H3>Conferences I've attended</H3>
+        </Title>
         <List>
           <INFO>
-            <LARGERCIRCLE
-              fluid={data.gn.childImageSharp.fluid}
-              alt="Google Next"
-              title="Google Next"
-            />
+            <Link>
+              <LARGERCIRCLE
+                fluid={data.gn.childImageSharp.fluid}
+                alt="Google Next"
+                title="Google Next"
+              />
+            </Link>
             <P>Google Next</P>
             <P>
               <small>April 9-11, 2019</small>
@@ -133,11 +134,13 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <LARGERCIRCLE
-              fluid={data.wu.childImageSharp.fluid}
-              alt="Web Unleashed"
-              title="Web Unleashed"
-            />
+            <Link href="">
+              <LARGERCIRCLE
+                fluid={data.wu.childImageSharp.fluid}
+                alt="Web Unleashed"
+                title="Web Unleashed"
+              />
+            </Link>
             <P>Web Unleashed</P>
             <P>
               <small>September 13-14, 2019</small>
@@ -150,11 +153,13 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <LARGERCIRCLE
-              fluid={data.ghc14.childImageSharp.fluid}
-              alt="Grace Hopper 2014"
-              title="Grace Hopper 2014"
-            />
+            <Link href="">
+              <LARGERCIRCLE
+                fluid={data.ghc14.childImageSharp.fluid}
+                alt="Grace Hopper 2014"
+                title="Grace Hopper 2014"
+              />
+            </Link>
             <P>Grace Hopper Conference 2014</P>
             <P>
               <small>October 8-10, 2014</small>
@@ -167,11 +172,13 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <LARGERCIRCLE
-              fluid={data.ghc15.childImageSharp.fluid}
-              alt="Grace Hopper 2015"
-              title="Grace Hopper 2015"
-            />
+            <Link href="">
+              <LARGERCIRCLE
+                fluid={data.ghc15.childImageSharp.fluid}
+                alt="Grace Hopper 2015"
+                title="Grace Hopper 2015"
+              />
+            </Link>
             <P>Grace Hopper Conference 2015</P>
             <P>
               <small>October 14-16, 2015</small>
@@ -293,28 +300,19 @@ const DIVROW = styled.div`
   }
 `;
 
-const H3 = styled.h3`
-  font-family: "Hipster", cursive;
-  color: #fff;
-  font-size: 54px;
-  filter: drop-shadow(1px 1px 2px #000);
-  margin: auto;
-
-  @media only screen and (max-width: 768px) {
-    margin: auto;
-  }
-`;
-
 const H2 = styled.h2`
-  font-family: "Hipster", cursive;
-  color: #fff;
-  font-size: 64px;
-  filter: drop-shadow(1px 1px 2px #000);
   margin: auto;
   display: flex;
   justify-content: center;
+`;
+
+const H3 = styled.h3`
+  font-family: "Hipster", cursive;
+  color: #fff;
+  font-size: 52px;
+  margin: 0;
   filter: drop-shadow(1px 1px 5px #00b0c8);
-  text-shadow: 0px 0px 3px #ff8cab;
+  text-shadow: 0px 0px 3px rgba(86, 59, 206, 0.9);
 
   @media only screen and (max-width: 768px) {
     margin: auto;
@@ -331,10 +329,10 @@ const IMG = styled(Img)`
 `;
 
 const P = styled.p`
-  font-family: "UnicaOne", sans-serif;
-  text-transform: lowercase;
+  font-family: "Scout", sans-serif;
+  letter-spacing: 1px;
   color: #000;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 22px;
   margin: 0;
 
@@ -359,9 +357,9 @@ const HR = styled.hr`
 `;
 
 const A = styled.a`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  font-family: "UnicaOne",sans-serif;
+  font-family: "Hipster", sans-serif;
   text-decoration: none;
   color: #fff;
   transition: filter 0.3s;
@@ -401,7 +399,7 @@ const CIRCLE = styled(Img)`
 const LARGERCIRCLE = styled(Img)`
   width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 160px;
   margin: 16px;
   border: 5px solid;
   border-image: linear-gradient(
@@ -414,6 +412,14 @@ const LARGERCIRCLE = styled(Img)`
       #000025 80%
     )
     30;
+`;
+
+const Link = styled(A)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 `;
 
 const Intro = styled.div`
@@ -438,5 +444,12 @@ const List = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  width: 100%;
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 `;

@@ -6,8 +6,11 @@ import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import LogoList from "../components/logolist";
 import TileList from "../components/tilelist";
+
 import { projects } from "../assets/files/projects";
+import { companies } from "../assets/files/companies";
 
 import "../css/main.css";
 import "../css/all.css";
@@ -18,12 +21,13 @@ const Work = ({ data }) => {
       <SEO title="Work" />
       <Hero fluid={data.heroImage.childImageSharp.fluid} />
       <Title>
-        <Heading>Examples of my work</Heading>
-        <Icon className={cx("fas", "fa-laptop-code")} />
+        <Heading>Companies I've worked for</Heading>
       </Title>
-      <Section>
-        <TileList list={projects} />
-      </Section>
+      <LogoList list={companies} />
+      <Title>
+        <Heading>Examples of my work</Heading>
+      </Title>
+      <TileList list={projects} />
       <Note>
         check out my resume here
         <Span className="far fa-arrow-alt-circle-down"></Span>
@@ -50,12 +54,7 @@ const Hero = styled(Img)`
   width: 100%;
   height: 500px;
   margin-bottom: 32px;
-
-  :hover {
-  }
 `;
-
-const Section = styled.div``;
 
 const Title = styled.div`
   display: flex;
@@ -99,4 +98,7 @@ const Note = styled.h3`
   margin-right: 24px;
   text-align: center;
   width: 100px;
+  position: absolute;
+  right: 0;
+  z-index: 100;
 `;

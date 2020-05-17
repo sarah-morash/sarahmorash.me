@@ -57,7 +57,7 @@ const SPAN = styled.span`
 `;
 
 const P = styled.p`
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   -webkit-font-smoothing: auto;
   color: #000;
   font-size: 20px;
@@ -100,7 +100,7 @@ const BLURB = styled.div`
 const A = styled.a`
   font-size: 20px;
   font-weight: bold;
-  font-family: "UnicaOne",sans-serif;
+  font-family: "Scout",sans-serif;
   text-decoration: none;
   color: #fff;
   transition: filter 0.3s;

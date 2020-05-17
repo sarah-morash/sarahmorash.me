@@ -156,14 +156,13 @@ const H2 = styled.h1`
 `;
 
 const LABEL = styled.label`
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   -webkit-font-smoothing: auto;
   color: #000;
   font-size: 28px;
   line-height: 16px;
   letter-spacing: 0px;
   margin: 32px 0 0 0;
-  text-transform: lowercase;
   display: block;
 `;
 
@@ -176,7 +175,7 @@ const PASSWORD = styled.input`
   text-decoration: none;
   border: 1px solid rgba(0, 176, 200, 0.1);
   border-radius: 8px;
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   text-align: left;
   letter-spacing: 0px;
   text-decoration: none;
@@ -194,7 +193,7 @@ const LOGIN = styled.input`
   text-decoration: none;
   border: 1px solid rgba(0, 176, 200, 0.1);
   border-radius: 8px;
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   text-align: center;
   letter-spacing: 0px;
   text-decoration: none;
@@ -260,8 +259,7 @@ const BW = styled.div`
 `;
 
 const P = styled.p`
-  font-family: "UnicaOne", sans-serif;
-  text-transform: lowercase;
+  font-family: "Scout", sans-serif;
   color: #000;
   font-size: 22px;
   line-height: 22px;
