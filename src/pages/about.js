@@ -115,7 +115,7 @@ const About = ({ data }) => {
         </Title>
         <List>
           <INFO>
-            <Link>
+            <Link href="https://cloud.withgoogle.com/next/sf/">
               <LARGERCIRCLE
                 fluid={data.gn.childImageSharp.fluid}
                 alt="Google Next"
@@ -134,7 +134,7 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <Link href="">
+            <Link href="https://fitc.ca/event/webu20/banners/">
               <LARGERCIRCLE
                 fluid={data.wu.childImageSharp.fluid}
                 alt="Web Unleashed"
@@ -153,7 +153,7 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <Link href="">
+            <Link href="https://ghc.anitab.org/">
               <LARGERCIRCLE
                 fluid={data.ghc14.childImageSharp.fluid}
                 alt="Grace Hopper 2014"
@@ -172,7 +172,7 @@ const About = ({ data }) => {
             </P>
           </INFO>
           <INFO>
-            <Link href="">
+            <Link href="https://ghc.anitab.org/">
               <LARGERCIRCLE
                 fluid={data.ghc15.childImageSharp.fluid}
                 alt="Grace Hopper 2015"
