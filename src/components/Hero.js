@@ -46,14 +46,14 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   -webkit-font-smoothing: auto;
   color: #000;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 16px;
   letter-spacing: 0px;
   margin: 32px 0 0 0;
-  text-transform: lowercase;
+  text-transform: uppercase;
 `;
 
 const TextContainer = styled.div`

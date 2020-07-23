@@ -91,7 +91,7 @@ const Intro = styled.div`
 `;
 
 const P = styled.p`
-  font-family: "UnicaOne", sans-serif;
+  font-family: "Scout", sans-serif;
   text-transform: lowercase;
   color: #000;
   font-size: 22px;
@@ -111,7 +111,7 @@ const Title = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-family: "Hipster", cursive;
+  font-family: "Scout", cursive;
   color: #fff;
   font-size: 100px;
   filter: drop-shadow(1px 1px 2px #000);
