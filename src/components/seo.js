@@ -71,7 +71,29 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription
         }
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="preload"
+        href="../fonts/Sweet-Hipster.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="../fonts//UnicaOne-Regular.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="../fonts/WhisperADream.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin="anonymous"
+      />
+    </Helmet>
   );
 }
 
