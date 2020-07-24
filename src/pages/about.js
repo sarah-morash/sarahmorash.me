@@ -233,7 +233,7 @@ export const query = graphql`
         }
       }
     }
-    wu: file(relativePath: { eq: "about/wu.jpeg" }) {
+    wu: file(relativePath: { eq: "about/wu.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1440, quality: 100) {
           ...GatsbyImageSharpFluid
