@@ -20,6 +20,7 @@ module.exports = {
         icon: `src/assets/images/icon.png`
       }
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
