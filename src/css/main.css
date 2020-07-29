@@ -1,33 +1,3 @@
-@font-face {
-  font-family: "Hipster";
-  src: url("../fonts/Sweet-Hipster.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Scout";
-  src: url("../fonts/scoutl.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-::selection {
-  background: #f3df95;
-}
-::-moz-selection {
-  background: #f3df95;
-}
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 article,
 aside,
 details,
