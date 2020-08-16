@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import cx from "classnames";
 import styled from "styled-components";
 
 import Layout from "../components/layout";
@@ -69,12 +68,6 @@ const Heading = styled.h1`
   filter: drop-shadow(1px 1px 2px #000);
   margin: 0;
   padding: 0 16px;
-`;
-
-const Icon = styled.span`
-  font-size: 32px;
-  color: #563bce;
-  opacity: 0.5;
 `;
 
 const Span = styled.span`

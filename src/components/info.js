@@ -13,7 +13,11 @@ const Info = () => {
           <P>
             Born & raised in Nova Scotia, Canada. You know, that place where
             Ellen Page, Sidney Crosby, Sarah McLachlan & Trailer Park Boys come
-            from 😉 #EASTCOAST
+            from{" "}
+            <span role="img" aria-label="wink face">
+              😉
+            </span>{" "}
+            #EASTCOAST
           </P>
         </BLURB>
 
