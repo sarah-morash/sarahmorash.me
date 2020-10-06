@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Layout from "../components/layout";
 import Hero from "../components/Hero";
 import SEO from "../components/seo";
 import Info from "../components/info";
@@ -11,7 +10,7 @@ import { brands } from "../assets/files/brands";
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
       <Hero />
       <Info />
@@ -19,7 +18,7 @@ const IndexPage = () => {
         <Heading>Brands I've worked with</Heading>
       </Title>
       <LogoList list={brands} />
-    </Layout>
+    </>
   );
 };
 

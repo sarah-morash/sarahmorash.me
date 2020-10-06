@@ -71,7 +71,22 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription
         }
       ].concat(meta)}
-    ></Helmet>
+    >
+      <link
+        rel="preload"
+        href="../fonts/Sweet-Hipster.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="../fonts/scoutl.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin="anonymous"
+      />
+    </Helmet>
   );
 }
 

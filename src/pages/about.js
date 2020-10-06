@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const About = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="About" />
       <HERO fluid={data.heroImage.childImageSharp.fluid} alt="collage" />
       <Intro>
@@ -192,7 +191,7 @@ const About = ({ data }) => {
           </INFO>
         </List>
       </DIV>
-    </Layout>
+    </>
   );
 };
 
@@ -300,12 +299,6 @@ const DIVROW = styled.div`
   }
 `;
 
-const H2 = styled.h2`
-  margin: auto;
-  display: flex;
-  justify-content: center;
-`;
-
 const H3 = styled.h3`
   font-family: "Hipster", cursive;
   color: #fff;
@@ -349,11 +342,6 @@ const Text = styled.div`
   @media only screen and (min-width: 768px) {
     width: 50%;
   }
-`;
-
-const HR = styled.hr`
-  width: 32px;
-  height: 2px;
 `;
 
 const A = styled.a`

@@ -1,10 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import cx from "classnames";
 import styled from "styled-components";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import LogoList from "../components/logolist";
 import TileList from "../components/tilelist";
@@ -17,7 +15,7 @@ import "../css/all.css";
 
 const Work = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="Work" />
       <Hero fluid={data.heroImage.childImageSharp.fluid} />
       <Title>
@@ -32,7 +30,7 @@ const Work = ({ data }) => {
         check out my resume here
         <Span className="far fa-arrow-alt-circle-down"></Span>
       </Note>
-    </Layout>
+    </>
   );
 };
 
@@ -69,12 +67,6 @@ const Heading = styled.h1`
   filter: drop-shadow(1px 1px 2px #000);
   margin: 0;
   padding: 0 16px;
-`;
-
-const Icon = styled.span`
-  font-size: 32px;
-  color: #563bce;
-  opacity: 0.5;
 `;
 
 const Span = styled.span`
