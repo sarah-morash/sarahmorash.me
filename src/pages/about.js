@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const About = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="About" />
       <HERO fluid={data.heroImage.childImageSharp.fluid} alt="collage" />
       <Intro>
@@ -192,7 +191,7 @@ const About = ({ data }) => {
           </INFO>
         </List>
       </DIV>
-    </Layout>
+    </>
   );
 };
 

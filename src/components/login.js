@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 import { isLoggedIn } from "../services/auth";
-import Layout from "./layout";
 import SEO from "./seo";
 
 import "../css/all.min.css";
@@ -53,7 +52,7 @@ const Login = () => {
   }
 
   return (
-    <Layout>
+    <>
       <SEO title="Wedding" />
       <Hero source={hero.childImageSharp.fluid.src}>
         <OVERLAYTOP>
@@ -98,7 +97,7 @@ const Login = () => {
         </LABEL>
         <LOGIN type="submit" value="Log In" />
       </form> */}
-    </Layout>
+    </>
   );
 };
 
