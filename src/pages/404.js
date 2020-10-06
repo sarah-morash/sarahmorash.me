@@ -3,12 +3,11 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import cx from "classnames";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const NotFoundPage = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="404" />
       <HERO fluid={data.hero.childImageSharp.fluid} alt="Hero image" />
       <Title>
@@ -24,7 +23,7 @@ const NotFoundPage = ({ data }) => {
         <P>Womp, womp... Looks like this page can't be found.</P>
         <P>Fun fact: I used to play tuba in high school!</P>
       </Intro>
-    </Layout>
+    </>
   );
 };
 

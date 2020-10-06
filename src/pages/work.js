@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import LogoList from "../components/logolist";
 import TileList from "../components/tilelist";
@@ -16,7 +15,7 @@ import "../css/all.css";
 
 const Work = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="Work" />
       <Hero fluid={data.heroImage.childImageSharp.fluid} />
       <Title>
@@ -31,7 +30,7 @@ const Work = ({ data }) => {
         check out my resume here
         <Span className="far fa-arrow-alt-circle-down"></Span>
       </Note>
-    </Layout>
+    </>
   );
 };
 
