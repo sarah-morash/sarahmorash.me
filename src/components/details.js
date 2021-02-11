@@ -14,7 +14,7 @@ const Details = () => (
         style={{ height: "100%", width: "100%", maxWidth: "100%" }}
       >
         <iframe
-          title="Wedding MaP"
+          title="Wedding Map"
           style={{ height: "100%", width: "100%", border: "0" }}
           frameborder="0"
           src="https://www.google.com/maps/embed/v1/place?q=old+orchard+inn&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"

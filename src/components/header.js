@@ -9,8 +9,10 @@ const Header = () => (
     </Link>
     <DIV>
       <StyledLink to="/about">about</StyledLink>
+      <StyledLink to="/dev">dev</StyledLink>
       <StyledLink to="/work">work</StyledLink>
-      <StyledLink to="/andkg">kg</StyledLink>
+
+      {/* <StyledLink to="/andkg">kg</StyledLink> */}
     </DIV>
   </StyledHeader>
 );
