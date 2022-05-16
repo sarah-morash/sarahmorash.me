@@ -3,18 +3,26 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = () => (
-  <StyledHeader>
-    <Link to="/" style={{ textDecoration: "none" }}>
-      <SPAN>sm</SPAN>
-    </Link>
-    <DIV>
-      <StyledLink to="/about">about</StyledLink>
-      <StyledLink to="/dev">dev</StyledLink>
-      <StyledLink to="/work">work</StyledLink>
-
-      {/* <StyledLink to="/andkg">kg</StyledLink> */}
-    </DIV>
-  </StyledHeader>
+  <div class='navbar shadow-lg bg-neutral-focus text-neutral-content rounded-box'>
+    <div class='px-2 mx-2 navbar-start'>
+      <Link to='/' style={{ textDecoration: "none" }}>
+        <SPAN>sm</SPAN>
+      </Link>
+    </div>
+    <div class='px-2 mx-2 navbar-end lg:flex'>
+      <div class='flex items-stretch'>
+        <a class='btn btn-ghost btn-sm rounded-btn' href='/about'>
+          About
+        </a>
+        <a class='btn btn-ghost btn-sm rounded-btn' href='/dev'>
+          Dev
+        </a>
+        <a class='btn btn-ghost btn-sm rounded-btn' href='/contact'>
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
 );
 
 export default Header;
@@ -26,7 +34,8 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   padding: 12px 0px 12px 32px;
   max-width: 1440px;
-  border-bottom: 5px solid;
+
+  /* border-bottom: 3px solid;
   border-image: linear-gradient(
       to right,
       #f3df95 20%,
@@ -34,7 +43,7 @@ const StyledHeader = styled.header`
       #00b0c8 60%,
       #563bce 80%
     )
-    30;
+    30; */
 `;
 
 const DIV = styled.div`
@@ -54,7 +63,7 @@ const SPAN = styled.span`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 72px;
-  filter: drop-shadow(2px 1px 0px #000);
+  /* filter: drop-shadow(2px 1px 0px #000); */
 
   &:hover {
     background: -webkit-linear-gradient(
@@ -69,12 +78,7 @@ const SPAN = styled.span`
 `;
 
 const StyledLink = styled(Link)`
-  font-family: "Hipster", cursive;
-  color: #000;
-  font-size: 32px;
-  line-height: 60px;
-  letter-spacing: 0px;
-  margin: 32px 16px;
+  /* margin: 0 16px; */
   text-decoration: none;
   -webkit-font-smoothing: auto;
   transition: all 0.3s;

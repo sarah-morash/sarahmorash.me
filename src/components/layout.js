@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Header from "./header";
-import Footer from "./Footer";
+import Footer from "./footer";
 
 import "../css/all.min.css";
 import "../css/main.css";
@@ -24,7 +24,9 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <DIV>
-        <main>{children}</main>
+        <main className='bg-neutral-focus text-neutral-content'>
+          {children}
+        </main>
         <Footer></Footer>
       </DIV>
     </>

@@ -1,196 +1,228 @@
 import React from "react";
-import styled from "styled-components";
 import Img from "gatsby-image";
+import { Link } from "gatsby";
 
 import SEO from "../components/seo";
 
 const About = ({ data }) => {
   return (
     <>
-      <SEO title="About" />
-      <HERO fluid={data.heroImage.childImageSharp.fluid} alt="collage" />
-      <Intro>
-        <CIRCLE
+      <SEO title='About' />
+      <Img fluid={data.heroImage.childImageSharp.fluid} alt='collage' />
+      <div className='flex'>
+        <Img
           fluid={data.me.childImageSharp.fluid}
-          alt="Animated me"
-          title="Animated me"
+          alt='Animated me'
+          title='Animated me'
+          className='w-32'
         />
-        <P>
+        <p>
           Hey, my name is Sarah Morash and I have been a software developer for
           over 6 years now. I have been fortunate to work for companies such
           as&nbsp;
-          <A href="https://www.t4g.com/" target="_blank">
+          <a
+            href='https://www.t4g.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             T4G
-          </A>
+          </a>
           ,&nbsp;
-          <A href="https://www.harbr.com/" target="_blank">
+          <a
+            href='https://www.harbr.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             Harbr
-          </A>
+          </a>
           , & currently&nbsp;
-          <A href="https://www.redspace.com/" target="_blank">
+          <a
+            href='https://www.redspace.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             REDspace
-          </A>
+          </a>
           . I started as a backend CMS developer primarily working with
           Sitecore, but I've switched gears to my true passion of frontend
           development.
-        </P>
-        <P>
+        </p>
+        <p>
           In my spare time, I am creating for the web, creating art at home, and
           working on getting stronger (mentally & physically). My fiancé is also
           a web developer. Check out his profile&nbsp;
-          <A href="https://ohearonkg.dev/" target="_blank">
+          <a
+            href='https://ohearonkg.dev/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             HERE
-          </A>
+          </a>
           . Yes, we are a coding couple 👩‍💻❤️👨‍💻
-        </P>
-      </Intro>
-      <DIV>
-        <DIVROW>
-          <IMG
+        </p>
+      </div>
+      <div className='flex'>
+        <div>
+          <Img
             fluid={data.grad.childImageSharp.fluid}
-            alt="DAL Grad"
-            title="DAL Grad"
+            alt='DAL Grad'
+            title='DAL Grad'
+            className='w-64'
           />
-          <Text>
-            <H3>DAL Grad</H3>
-            <P>
+          <div>
+            <h3>DAL Grad</h3>
+            <p>
               I took a Bachelor of Computer Science from Dalhousie University,
               with a minor in Mathematics & a focus in Music. Learn more about
               the CS program&nbsp;
-              <A href="https://cs.dal.ca" target="_blank">
+              <a
+                href='https://cs.dal.ca'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 HERE
-              </A>
+              </a>
               .
-            </P>
-          </Text>
-        </DIVROW>
+            </p>
+          </div>
+        </div>
 
-        <DIVROW>
-          <Text>
-            <H3>WiTS</H3>
-            <P>
+        <div className='flex'>
+          <div>
+            <h3>WiTS</h3>
+            <p>
               For many years I was on the exec for the Women in Technology
               Society (WiTS). The focus was for women and other underrepresented
               groups to feel welcome in CS, and in the broader tech industry.
               Learn more about the society&nbsp;
-              <A href="https://wits.cs.dal.ca/" target="_blank">
+              <a
+                href='https://wits.cs.dal.ca/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 HERE
-              </A>
+              </a>
               .
-            </P>
-          </Text>
-          <IMG
+            </p>
+          </div>
+          <Img
             fluid={data.wits.childImageSharp.fluid}
-            alt="WITS"
-            title="WITS"
+            alt='WITS'
+            title='WITS'
+            className='w-64'
           />
-        </DIVROW>
+        </div>
 
-        <DIVROW>
-          <IMG
+        <div className='flex'>
+          <Img
             fluid={data.clc.childImageSharp.fluid}
-            alt="Canada Learning Code"
-            title="Canada Learning Code"
+            alt='Canada Learning Code'
+            title='Canada Learning Code'
+            className='w-64'
           />
-          <Text>
-            <H3>Canada Learning Code</H3>
-            <P>
+          <div>
+            <h3>Canada Learning Code</h3>
+            <p>
               I volunteer as a mentor for Canada Learning Code. This teaches
               kids, adults, and teachers alike coding fundamentals, with a
               variety of different topics, like game making, website creation,
               design, data visualization, and more. Learn more about the
               program&nbsp;
-              <A href="https://www.canadalearningcode.ca/" target="_blank">
+              <a href='https://www.canadalearningcode.ca/' target='_blank'>
                 HERE
-              </A>
+              </a>
               .
-            </P>
-          </Text>
-        </DIVROW>
-      </DIV>
-      <DIV>
-        <Title>
-          <H3>Conferences I've attended</H3>
-        </Title>
-        <List>
-          <INFO>
-            <Link href="https://cloud.withgoogle.com/next/sf/">
-              <LARGERCIRCLE
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className='flex'>
+        <div>
+          <h3>Conferences I've attended</h3>
+        </div>
+        <div>
+          <div>
+            <a href='https://cloud.withgoogle.com/next/sf/'>
+              <Img
                 fluid={data.gn.childImageSharp.fluid}
-                alt="Google Next"
-                title="Google Next"
+                alt='Google Next'
+                title='Google Next'
+                className='w-64'
               />
-            </Link>
-            <P>Google Next</P>
-            <P>
+            </a>
+            <p>Google Next</p>
+            <p>
               <small>April 9-11, 2019</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>San Fransisco, California</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>Theme: All about the latest with Google Cloud</small>
-            </P>
-          </INFO>
-          <INFO>
-            <Link href="https://fitc.ca/event/webu20/banners/">
-              <LARGERCIRCLE
+            </p>
+          </div>
+          <div>
+            <Link href='https://fitc.ca/event/webu20/banners/'>
+              <Img
                 fluid={data.wu.childImageSharp.fluid}
-                alt="Web Unleashed"
-                title="Web Unleashed"
+                alt='Web Unleashed'
+                title='Web Unleashed'
+                className='w-64'
               />
             </Link>
-            <P>Web Unleashed</P>
-            <P>
+            <p>Web Unleashed</p>
+            <p>
               <small>September 13-14, 2019</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>Toronto, Ontario</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>Theme: All about the latest with the web</small>
-            </P>
-          </INFO>
-          <INFO>
-            <Link href="https://ghc.anitab.org/">
-              <LARGERCIRCLE
+            </p>
+          </div>
+          <div>
+            <Link href='https://ghc.anitab.org/'>
+              <Img
                 fluid={data.ghc14.childImageSharp.fluid}
-                alt="Grace Hopper 2014"
-                title="Grace Hopper 2014"
+                alt='Grace Hopper 2014'
+                title='Grace Hopper 2014'
+                className='w-64'
               />
             </Link>
-            <P>Grace Hopper Conference 2014</P>
-            <P>
+            <p>Grace Hopper Conference 2014</p>
+            <p>
               <small>October 8-10, 2014</small>
-            </P>
-            <P>
-              <small>Phoenix, Arizona</small>
-            </P>
-            <P>
+            </p>
+            <p>
+              <small>phoenix, Arizona</small>
+            </p>
+            <p>
               <small>Theme: Everywhere. Everyone.</small>
-            </P>
-          </INFO>
-          <INFO>
-            <Link href="https://ghc.anitab.org/">
-              <LARGERCIRCLE
+            </p>
+          </div>
+          <div>
+            <a href='https://ghc.anitab.org/'>
+              <Img
                 fluid={data.ghc15.childImageSharp.fluid}
-                alt="Grace Hopper 2015"
-                title="Grace Hopper 2015"
+                alt='Grace Hopper 2015'
+                title='Grace Hopper 2015'
+                className='w-64'
               />
-            </Link>
-            <P>Grace Hopper Conference 2015</P>
-            <P>
+            </a>
+            <p>Grace Hopper Conference 2015</p>
+            <p>
               <small>October 14-16, 2015</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>Houston, Texas</small>
-            </P>
-            <P>
+            </p>
+            <p>
               <small>Theme: Our Time to Lead</small>
-            </P>
-          </INFO>
-        </List>
-      </DIV>
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -264,180 +296,3 @@ export const query = graphql`
 `;
 
 export default About;
-
-const DIV = styled.div`
-  margin: 100px 32px;
-  max-width: 1440px;
-`;
-
-const INFO = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: none;
-  width: 50%;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const DIVROW = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  z-index: 10;
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    margin: 32px auto;
-    width: 100%;
-  }
-`;
-
-const H3 = styled.h3`
-  font-family: "Hipster", cursive;
-  color: #fff;
-  font-size: 52px;
-  margin: 0;
-  filter: drop-shadow(1px 1px 5px #00b0c8);
-  text-shadow: 0px 0px 3px rgba(86, 59, 206, 0.9);
-
-  @media only screen and (max-width: 768px) {
-    margin: auto;
-  }
-`;
-
-const IMG = styled(Img)`
-  width: 50%;
-  max-width: 500px;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const P = styled.p`
-  font-family: "Scout", sans-serif;
-  letter-spacing: 1px;
-  color: #000;
-  font-size: 18px;
-  line-height: 22px;
-  margin: 0;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    max-width: 500px;
-  }
-`;
-
-const Text = styled.div`
-  width: 100%;
-  padding: 32px;
-
-  @media only screen and (min-width: 768px) {
-    width: 50%;
-  }
-`;
-
-const A = styled.a`
-  font-size: 24px;
-  font-weight: bold;
-  font-family: "Hipster", sans-serif;
-  text-decoration: none;
-  color: #fff;
-  transition: filter 0.3s;
-  text-shadow: 0px 0px 3px rgba(86,59,206,1);
-
-  &:hover {
-    transition: filter 0.3s;
-    filter: drop-shadow(0px 0px 5px rgba(0,176,200,1));
-  }
-}`;
-
-const HERO = styled(Img)`
-  width: 100%;
-  height: auto;
-  max-height: 1440px;
-  margin-bottom: 32px;
-`;
-
-const CIRCLE = styled(Img)`
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin: 16px;
-  border: 5px solid;
-  border-image: linear-gradient(
-      to right,
-      #000025 20%,
-      #f3df95 20%,
-      #ff8cab 40%,
-      #563bce 60%,
-      #00b0c8 80%,
-      #000025 80%
-    )
-    30;
-`;
-
-const LARGERCIRCLE = styled(Img)`
-  width: 100%;
-  max-width: 300px;
-  height: 160px;
-  margin: 16px;
-  border: 5px solid;
-  border-image: linear-gradient(
-      to right,
-      #000025 20%,
-      #f3df95 20%,
-      #ff8cab 40%,
-      #563bce 60%,
-      #00b0c8 80%,
-      #000025 80%
-    )
-    30;
-`;
-
-const Link = styled(A)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-`;
-
-const Intro = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 32px;
-  justify-content: center;
-  align-items: center;
-
-  @media only screen and (min-width: 768px) {
-    flex-direction: row;
-  }
-
-  p {
-    margin: 0 16px;
-  }
-`;
-
-const List = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-`;
-
-const Title = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;

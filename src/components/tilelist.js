@@ -8,10 +8,8 @@ const TileList = ({ list }) => {
   return (
     <DIV>
       {list.map((item, index) => (
-        <Tile key={index}>
-          <A title={item.title} href={item.link}>
-            <Image src={item.image}></Image>
-          </A>
+        <A title={item.title} href={item.link} target="_blank" key={index}>
+          <Image src={item.image}></Image>
           <Name>{item.title}</Name>
           <Position>{item.position}</Position>
           <Description>{item.text}</Description>
@@ -20,23 +18,13 @@ const TileList = ({ list }) => {
               <LOGO src={tech.image} alt={tech.name} title={tech.name} />
             ))}
           </TechStack>
-        </Tile>
+        </A>
       ))}
     </DIV>
   );
 };
 
 export default TileList;
-
-const Tile = styled.div`
-  border: none;
-  margin: 30px;
-  width: 100%;
-
-  @media only screen and (min-width: 768px) {
-    width: 25%;
-  }
-`;
 
 const DIV = styled.div`
   display: flex;
@@ -48,8 +36,29 @@ const DIV = styled.div`
 `;
 
 const A = styled.a`
+  border: none;
+  margin: 30px;
+  width: 100%;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 10px 10px #000;
   text-decoration: none;
   overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+    width: 40%;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    width: 25%;
+  }
+
+  &:hover {
+    transition: box-shadow 0.25s;
+    border: 1px solid black;
+    box-shadow: 10px 10px grey;
+  }
 `;
 
 const Image = styled.img`
@@ -64,10 +73,10 @@ const Image = styled.img`
     height: 180px;
   }
 
-  &:hover {
+  /* &:hover {
     transition: filter 0.5s;
     filter: drop-shadow(2px 2px 2px #f3df95) drop-shadow(2px 2px 4px #ff8cab) drop-shadow(-2px -2px 2px #00b0c8) drop-shadow(-2px -2px 4px #563bce);
-  }
+  } */
 }`;
 
 const Name = styled.span`

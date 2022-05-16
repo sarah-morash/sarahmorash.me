@@ -3,12 +3,21 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
+import photo from "../assets/images/cb_selfie.jpg";
+
 const Hero = () => {
-  const { heroImage } = useStaticQuery(graphql`
+  const { heroImage, bitmojiMe } = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "me.png" }) {
+      heroImage: file(relativePath: { eq: "cb_selfie.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bitmojiMe: file(relativePath: { eq: "bitmojiMe.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -16,13 +25,28 @@ const Hero = () => {
     }
   `);
   return (
-    <>
-      <Img fluid={heroImage.childImageSharp.fluid} alt="Sarah Morash" />
-      <TextContainer>
-        <H2>Hey there, I'm</H2>
-        <H1>sarah morash</H1>
-      </TextContainer>
-    </>
+    <div
+      class='hero min-h-screen'
+      style={{
+        backgroundImage: `url(${photo})`,
+        height: "600px",
+        maxHeight: "60vh"
+      }}
+    >
+      <div class='hero-overlay bg-opacity-30'></div>
+      <div class='text-right hero-content text-neutral-content w-full h-full justify-end items-end'>
+        <div class='max-w-md'>
+          <h1 class='mb-5 text-4xl font-bold'>Hello World</h1>
+          <p class='mb-5'>
+            My name is Sarah Morash and I am a Senior Software Developer in
+            Halifax, NS.
+          </p>
+          <a href='/about'>
+            <button class='btn btn-primary'>Learn More</button>
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -61,6 +85,25 @@ const TextContainer = styled.div`
   padding-left: 32px;
   display: flex;
   flex-direction: column;
+`;
+
+const Bitmoji = styled(Img)`
+  height: 145px;
+  width: 119px;
+  margin: 30px;
+
+  @media only screen and (max-width: 768px) {
+    height: 100px;
+    width: 82px;
+    margin: 30px 0;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export default Hero;

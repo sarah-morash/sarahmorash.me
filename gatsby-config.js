@@ -30,6 +30,7 @@ module.exports = {
         name: "images"
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-postcss`
   ]
 };

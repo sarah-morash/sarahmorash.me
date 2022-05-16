@@ -26,10 +26,6 @@ const Work = ({ data }) => {
         <Heading>Examples of my work</Heading>
       </Title>
       <TileList list={projects} />
-      <Note>
-        check out my resume here
-        <Span className="far fa-arrow-alt-circle-down"></Span>
-      </Note>
     </>
   );
 };

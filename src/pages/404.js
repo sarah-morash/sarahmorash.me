@@ -8,8 +8,8 @@ import SEO from "../components/seo";
 const NotFoundPage = ({ data }) => {
   return (
     <>
-      <SEO title="404" />
-      <HERO fluid={data.hero.childImageSharp.fluid} alt="Hero image" />
+      <SEO title='404' />
+      <HERO fluid={data.hero.childImageSharp.fluid} alt='Hero image' />
       <Title>
         <Heading>404</Heading>
         <Icon className={cx("fas", "fa-exclamation-triangle")} />
@@ -17,8 +17,8 @@ const NotFoundPage = ({ data }) => {
       <Intro>
         <CIRCLE
           fluid={data.tuba.childImageSharp.fluid}
-          alt="Tuba Sarah"
-          title="Tuba Sarah"
+          alt='Tuba Sarah'
+          title='Tuba Sarah'
         />
         <P>Womp, womp... Looks like this page can't be found.</P>
         <P>Fun fact: I used to play tuba in high school!</P>
